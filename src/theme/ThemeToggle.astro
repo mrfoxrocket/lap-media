@@ -1,0 +1,18 @@
+
+---
+import { Icon } from "astro-icon/components";
+---
+
+<button id="theme-toggle" class="group">
+    <Icon name="tabler:moon" class={"icon-moon group-hover:animate-bigwiggle hidden dark:inline"} size={24} />
+    <Icon name="tabler:sun" class={"icon-sun group-hover:animate-slowspin dark:hidden"} size={24} />
+</button>
+
+<script>
+    import handleToggleClick from "./script";
+
+    document.getElementById("theme-toggle")?.addEventListener("click", handleToggleClick);
+    document.addEventListener("astro:after-swap", () => {
+        document.getElementById("theme-toggle")?.addEventListener("click", handleToggleClick);
+    });
+</script>

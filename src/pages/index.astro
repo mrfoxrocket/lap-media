@@ -1,11 +1,796 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from "../layouts/Layout.astro"
+import { Icon } from "astro-icon/components"
+import { Image } from "astro:assets"
+import Logo from "@/assets/logo.svg"
 ---
 
 <Layout>
-	<Welcome />
+    <div class="flex flex-col min-h-screen">
+      {/* Header/Navigation */}
+      <header class="sticky top-0 z-50 w-full bg-background border-b border-muted-foreground">
+        <div class="container mx-auto px-4 md:px-6 flex min-h-16 items-center justify-between">
+          <div class="flex items-center gap-2">
+          <Logo width={100} height={100}  />
+          </div>
+      
+          <div class="flex items-center gap-4">
+            
+                  <a
+                    href="/booking"
+                    class="inline-flex h-9 items-center justify-center rounded-md bg-primary px-4 text-sm font-medium text-foreground shadow transition-colors hover:bg-accent focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-accent"
+                  >
+
+              Free Website Design
+            </a>
+            <a
+              href="#contact"
+              class="inline-flex h-9 items-center justify-center rounded-md border border-muted-foreground bg-background px-4 py-2 text-sm font-medium shadow-sm  hover:bg-muted transition-colors hover:text-foreground focus-visible:outline-none "
+            >
+              Contact Us
+            </a>
+          </div>
+        </div>
+      </header>
+
+      <main class="flex-1">
+        {/* Hero Section */}
+      <section class="w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-gradient-to-b from-background to-primary/10 ">
+          <div class="container mx-auto px-4 md:px-6">
+            <div class="grid gap-6 lg:grid-cols-2 lg:gap-12 xl:grid-cols-2">
+              <div class="flex flex-col justify-center space-y-4">
+                <div class="space-y-2">
+                  <h1 class="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
+                    Websites That Generate Leads For Your Roofing Business
+                  </h1>
+                  <p class="max-w-[600px] text-muted-foreground md:text-xl">
+                    We specialise in designing and building high-converting websites specifically for Roofers to help attract more clients and grow your revenue through organic traffic.
+                  </p>
+                </div>
+                <div class="flex flex-col gap-2 min-[400px]:flex-row">
+                  <a
+                    href="/booking"
+                    class="inline-flex h-10 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-foreground shadow transition-colors hover:bg-accent focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-accent"
+                  >
+                    Get a Free Design
+                  </a>
+                  <a
+                    href="#portfolio"
+                    class="inline-flex h-10 items-center justify-center rounded-md border border-muted-foreground bg-background px-8 text-sm font-medium shadow-sm transition-colors hover:bg-muted focus-visible:outline-none "
+                  >
+                    View Our Work
+                  </a>
+                </div>
+                <div class="flex items-center gap-4 pt-4">
+                  <div class="flex -space-x-2">
+                    {[1, 2, 3, 4].map((i) => (
+                      <div  class="inline-block h-8 w-8 rounded-full bg-background ring-2 ring-white" />
+                    ))}
+                  </div>
+                  <div class="flex items-center gap-1">
+                    {[1, 2, 3, 4, 5].map((i) => (
+                      <Icon name='lucide:star'  class="h-5 w-5 fill-current text-yellow-400" />
+                    ))}
+                  </div>
+                  <div class="text-sm text-muted-foreground">Trusted by 100+ businesses</div>
+                </div>
+              </div>
+              <div class="flex items-center justify-center">
+                <div class="relative w-full max-w-[500px]">
+                  <div class="absolute -top-6 -left-6 h-24 w-24 rounded-full bg-muted blur-xl"></div>
+                  <div class="absolute -bottom-6 -right-6 h-24 w-24 rounded-full bg-blue-200 blur-xl"></div>
+                  <div class="relative overflow-hidden rounded-xl border border-muted-foreground bg-background shadow-xl">
+                    <Image
+                      src="/placeholder.svg?height=600&width=800"
+                      width={800}
+                      height={600}
+                      alt="Website Design Preview"
+                      class="w-full object-cover"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Clients/Logos Section */}
+        <section class="w-full py-12 md:py-16 lg:py-20 border-y border-muted-foreground bg-background">
+          <div class="container mx-auto px-4 md:px-6">
+            <div class="flex flex-col items-center justify-center space-y-4 text-center">
+              <div class="space-y-2">
+                <h2 class="text-xl font-medium tracking-tight sm:text-2xl">
+                  Trusted by businesses across industries
+                </h2>
+              </div>
+              <div class="grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-6">
+                {[1, 2, 3, 4, 5, 6].map((i) => (
+                  <div  class="flex items-center justify-center">
+                    <Image
+                      src="/placeholder.svg?height=80&width=140"
+                      width={140}
+                      height={80}
+                      alt={`Client Logo ${i}`}
+                      class="h-12 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Services Section */}
+        <section id="services" class="w-full py-12 md:py-24 lg:py-32 bg-background">
+          <div class="container mx-auto px-4 md:px-6">
+            <div class="flex flex-col items-center justify-center space-y-4 text-center">
+              <div class="space-y-2">
+              <div class="inline-flex items-center justify-center rounded-full bg-muted/50 px-3 py-1 text-sm text-foreground">
+                  Our Services
+                </div>
+                <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+                  Comprehensive Web Solutions
+                </h2>
+                <p class="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                  We offer end-to-end web design and development services to help your business succeed online.
+                </p>
+              </div>
+            </div>
+            <div class="mx-auto grid max-w-5xl grid-cols-1 gap-6 py-12 md:grid-cols-2 lg:grid-cols-3">
+              {[
+                {
+                  icon: <Icon name='lucide:layout' class="h-10 w-10 text-primary" />,
+                  title: "Website Design",
+                  description: "Custom, responsive website designs that reflect your brand and engage your visitors.",
+                },
+                {
+            icon: <Icon name='lucide:code' class="h-10 w-10 text-primary" />,
+                  title: "Web Development",
+                  description:
+                    "Clean, efficient code that ensures your website loads quickly and functions flawlessly.",
+                },
+                {
+                  icon: <Icon name='lucide:home' class="h-10 w-10 text-primary" />,
+                  title: "Roofing Websites",
+                  description: "Specialized websites for roofing companies designed to generate quality leads.",
+                },
+                {
+                  icon: <Icon name='lucide:search' class="h-10 w-10 text-primary" />,
+                  title: "SEO Optimization",
+                  description: "On-page and technical SEO to help your website rank higher in search results.",
+                },
+                {
+icon: <Icon name='lucide:message-square' class="h-10 w-10 text-primary" />,
+                  title: "Content Creation",
+                  description: "Compelling copy and content that speaks to your audience and drives conversions.",
+                },
+                {
+                  icon: <Icon name='lucide:globe' class="h-10 w-10 text-primary" />,
+                  title: "Website Maintenance",
+                  description: "Ongoing support and maintenance to keep your website secure and up-to-date.",
+                },
+              ].map((service, i) => (
+                <div
+                  
+                  class="group relative overflow-hidden rounded-lg border border-muted-foreground bg-background p-6 shadow-sm transition-all hover:shadow-md"
+                >
+                  <div class="mb-4">{service.icon}</div>
+                  <h3 class="mb-2 text-xl font-bold">{service.title}</h3>
+                  <p class="text-muted-foreground">{service.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Why Choose Us Section */}
+        <section class="w-full py-12 md:py-24 lg:py-32 bg-background">
+          <div class="container mx-auto px-4 md:px-6">
+            <div class="grid gap-6 lg:grid-cols-2 lg:gap-12">
+              <div class="flex flex-col justify-center space-y-4">
+                <div class="space-y-2">
+                  <div class="inline-flex items-center justify-center rounded-full bg-foreground px-3 py-1 text-sm text-primary">
+                    Why Choose Us
+                  </div>
+                  <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+                    Websites That Drive Results
+                  </h2>
+                  <p class="max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                    We don't just build beautiful websites. We create digital experiences that convert visitors into
+                    customers.
+                  </p>
+                </div>
+                <div class="space-y-4">
+                  {[
+                    {
+                      title: "Results-Driven Approach",
+                      description: "We focus on creating websites that generate leads and drive business growth.",
+                    },
+                    {
+                      title: "Industry Expertise",
+                      description: "Specialized experience in roofing and construction websites that convert.",
+                    },
+                    {
+                      title: "Custom Designs",
+                      description: "Every website is custom-designed to match your brand and business goals.",
+                    },
+                    {
+                      title: "Ongoing Support",
+                      description: "We're with you every step of the way, from design to launch and beyond.",
+                    },
+                  ].map((item, i) => (
+                    <div  class="flex items-start gap-4">
+                      <div class="flex-shrink-0">
+                        <Icon name='lucide:check-circle' class="h-6 w-6 text-primary" />
+                      </div>
+                      <div>
+                        <h3 class="font-medium">{item.title}</h3>
+                        <p class="text-sm text-muted-foreground">{item.description}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <div>
+                  <a
+                    href="#contact"
+                    class="inline-flex h-10 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-foreground shadow transition-colors hover:bg-accent focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-accent"
+                  >
+                    Schedule a Consultation
+                  </a>
+                </div>
+              </div>
+              <div class="flex items-center justify-center">
+                <div class="relative w-full max-w-[500px]">
+                  <Image
+                    src="/placeholder.svg?height=600&width=600"
+                    width={600}
+                    height={600}
+                    alt="Website Design Process"
+                    class="rounded-xl object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Portfolio Section */}
+        <section id="portfolio" class="w-full py-12 md:py-24 lg:py-32 bg-background">
+          <div class="container mx-auto px-4 md:px-6">
+            <div class="flex flex-col items-center justify-center space-y-4 text-center">
+              <div class="space-y-2">
+                <div class="inline-flex items-center justify-center rounded-full bg-foreground px-3 py-1 text-sm text-primary">
+                  Our Portfolio
+                </div>
+                <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Recent Website Projects</h2>
+                <p class="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                  Take a look at some of our recent website designs across various industries.
+                </p>
+              </div>
+            </div>
+            <div class="mx-auto grid max-w-5xl grid-cols-1 gap-6 py-12 md:grid-cols-2 lg:grid-cols-3">
+              {[
+                { category: "Roofing", title: "Elite Roofing Solutions" },
+                { category: "Construction", title: "BuildRight Contractors" },
+                { category: "Roofing", title: "Johnson Roofing & Gutters" },
+                { category: "Home Services", title: "Quality Home Repairs" },
+                { category: "Roofing", title: "Apex Roof Systems" },
+                { category: "Construction", title: "Cornerstone Builders" },
+              ].map((project, i) => (
+                <div  class="group relative overflow-hidden rounded-lg">
+                  <Image
+                    src={`/placeholder.svg?height=400&width=600`}
+                    width={600}
+                    height={400}
+                    alt={project.title}
+                    class="w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div class="absolute bottom-0 left-0 right-0 p-4 text-foreground">
+                      <div class="text-sm font-medium text-purple-300">{project.category}</div>
+                      <h3 class="text-lg font-bold">{project.title}</h3>
+                      <a
+                        href="#"
+                        class="mt-2 inline-flex items-center text-sm text-purple-300 hover:text-purple-200"
+                      >
+                        View Project <Icon name='lucide:arrow-right' class="ml-1 h-4 w-4" />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div class="flex justify-center">
+              <a
+                href="/portfolio"
+                class="inline-flex h-10 items-center justify-center rounded-md border border-muted-foreground bg-background px-8 text-sm font-medium shadow-sm transition-colors hover:bg-background hover:text-gray-900 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950"
+              >
+                View All Projects
+              </a>
+            </div>
+          </div>
+        </section>
+
+        {/* Process Section */}
+        <section id="process" class="w-full py-12 md:py-24 lg:py-32 bg-background">
+          <div class="container mx-auto px-4 md:px-6">
+            <div class="flex flex-col items-center justify-center space-y-4 text-center">
+              <div class="space-y-2">
+                <div class="inline-flex items-center justify-center rounded-full bg-foreground px-3 py-1 text-sm text-primary">
+                  Our Process
+                </div>
+                <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+                  How We Build Your Website
+                </h2>
+                <p class="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                  Our streamlined process ensures your website is delivered on time and exceeds your expectations.
+                </p>
+              </div>
+            </div>
+            <div class="mx-auto grid max-w-5xl grid-cols-1 gap-8 py-12 md:grid-cols-2 lg:grid-cols-4">
+              {[
+                {
+                  step: 1,
+                  title: "Discovery",
+                  description: "We learn about your business, goals, and target audience to create a strategic plan.",
+                  icon: <Icon name='lucide:users' class="h-10 w-10 text-primary" />,
+                },
+                {
+                  step: 2,
+                  title: "Design",
+                  description:
+                    "Our designers create a custom website design that aligns with your brand and objectives.",
+                  icon: <Icon name='lucide:layout' class="h-10 w-10 text-primary" />,
+                },
+                {
+                  step: 3,
+                  title: "Development",
+                  description:
+                    "We build your website with clean code, ensuring it's fast, responsive, and user-friendly.",
+                  icon: <Icon name='lucide:code' class="h-10 w-10 text-primary" />,
+                },
+                {
+                  step: 4,
+                  title: "Launch",
+                  description: "After thorough testing, we launch your website and provide training on how to use it.",
+                  icon: <Icon name='lucide:globe' class="h-10 w-10 text-primary" />,
+                },
+              ].map((step) => (
+                <div  class="relative flex flex-col items-center text-center">
+                  <div class="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-foreground">
+                    {step.icon}
+                  </div>
+                  <div class="absolute -top-2 -right-2 flex h-8 w-8 items-center justify-center rounded-full bg-primary text-foreground">
+                    {step.step}
+                  </div>
+                  <h3 class="mb-2 text-xl font-bold">{step.title}</h3>
+                  <p class="text-sm text-muted-foreground">{step.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Pricing Section */}
+        <section id="pricing" class="w-full py-12 md:py-24 lg:py-32 bg-background">
+          <div class="container mx-auto px-4 md:px-6">
+            <div class="flex flex-col items-center justify-center space-y-4 text-center">
+              <div class="space-y-2">
+                <div class="inline-flex items-center justify-center rounded-full bg-foreground px-3 py-1 text-sm text-primary">
+                  Pricing
+                </div>
+                <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+                  Transparent Website Packages
+                </h2>
+                <p class="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                  Choose the package that best fits your business needs and budget.
+                </p>
+              </div>
+            </div>
+            <div class="mx-auto grid max-w-5xl grid-cols-1 gap-6 py-12 md:grid-cols-3">
+              {[
+                {
+                  name: "Starter",
+                  price: "$1,499",
+                  description: "Perfect for small businesses just getting started online.",
+                  features: [
+                    "5-page responsive website",
+                    "Custom design",
+                    "Contact form",
+                    "Mobile optimization",
+                    "Basic SEO setup",
+                  ],
+                  popular: false,
+                },
+                {
+                  name: "Professional",
+                  price: "$2,999",
+                  description: "Our most popular package for growing businesses.",
+                  features: [
+                    "10-page responsive website",
+                    "Premium custom design",
+                    "Lead generation forms",
+                    "Content management system",
+                    "Advanced SEO optimization",
+                    "Social media integration",
+                    "Google Analytics setup",
+                  ],
+                  popular: true,
+                },
+                {
+                  name: "Enterprise",
+                  price: "$4,999",
+                  description: "Comprehensive solution for established businesses.",
+                  features: [
+                    "20-page responsive website",
+                    "Premium custom design",
+                    "Advanced lead generation",
+                    "Content management system",
+                    "E-commerce functionality",
+                    "Comprehensive SEO package",
+                    "Social media integration",
+                    "Analytics dashboard",
+                    "Priority support",
+                  ],
+                  popular: false,
+                },
+              ].map((plan, i) => (
+                <div
+                  
+                  class={`relative flex flex-col overflow-hidden rounded-lg border ${
+                    plan.popular ? "border-primary" : "border-muted-foreground"
+                  } bg-background p-6 shadow-sm`}
+                >
+                  {plan.popular && (
+                    <div class="absolute -right-12 top-6 rotate-45 bg-primary px-12 py-1 text-sm text-foreground">
+                      Popular
+                    </div>
+                  )}
+                  <div class="mb-4">
+                    <h3 class="text-xl font-bold">{plan.name}</h3>
+                    <div class="mt-2 flex items-baseline">
+                      <span class="text-3xl font-bold">{plan.price}</span>
+                      <span class="ml-1 text-sm text-muted-foreground">one-time</span>
+                    </div>
+                    <p class="mt-2 text-sm text-muted-foreground">{plan.description}</p>
+                  </div>
+                  <ul class="mb-6 flex-1 space-y-2">
+                    {plan.features.map((feature, j) => (
+                      <li  class="flex items-center">
+                        <Icon name='lucide:check-circle' class="mr-2 h-4 w-4 text-green-500" />
+                        <span class="text-sm">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <a
+                    href="#contact"
+                    class={`inline-flex h-10 items-center justify-center rounded-md ${
+                      plan.popular
+                        ? "bg-primary text-foreground hover:bg-accent"
+                        : "border border-muted-foreground bg-background hover:bg-background"
+                    } px-6 text-sm font-medium shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950`}
+                  >
+                    Get Started
+                  </a>
+                </div>
+              ))}
+            </div>
+            <div class="mx-auto max-w-3xl text-center">
+              <p class="text-muted-foreground">
+                Need a custom solution?{" "}
+                <a href="#contact" class="text-primary hover:underline">
+                  Contact us
+                </a>{" "}
+                for a personalized quote.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Testimonials Section */}
+        <section id="testimonials" class="w-full py-12 md:py-24 lg:py-32 bg-background">
+          <div class="container mx-auto px-4 md:px-6">
+            <div class="flex flex-col items-center justify-center space-y-4 text-center">
+              <div class="space-y-2">
+                <div class="inline-flex items-center justify-center rounded-full bg-foreground px-3 py-1 text-sm text-primary">
+                  Testimonials
+                </div>
+                <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">What Our Clients Say</h2>
+                <p class="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                  Don't just take our word for it. Here's what our clients have to say about working with us.
+                </p>
+              </div>
+            </div>
+            <div class="mx-auto grid max-w-5xl grid-cols-1 gap-6 py-12 md:grid-cols-2 lg:grid-cols-3">
+              {[
+                {
+                  quote:
+                    "Working with DesignCraft was a game-changer for our roofing business. Our new website has increased our leads by 40% in just two months!",
+                  author: "Mike Johnson",
+                  company: "Johnson Roofing",
+                  image: "/placeholder.svg?height=100&width=100",
+                },
+                {
+                  quote:
+                    "The team at DesignCraft understood exactly what our construction company needed. The website they designed is beautiful and brings in new clients every week.",
+                  author: "Sarah Rodriguez",
+                  company: "Elite Construction",
+                  image: "/placeholder.svg?height=100&width=100",
+                },
+                {
+                  quote:
+                    "I was blown away by the quality of work and attention to detail. Our new website perfectly represents our brand and has significantly improved our online presence.",
+                  author: "David Thompson",
+                  company: "Thompson Home Services",
+                  image: "/placeholder.svg?height=100&width=100",
+                },
+              ].map((testimonial, i) => (
+                <div
+                  
+                  class="flex flex-col justify-between rounded-lg border border-muted-foreground bg-background p-6 shadow-sm"
+                >
+                  <div>
+                    <div class="flex mb-4">
+                      {[1, 2, 3, 4, 5].map(() => (
+                        <Icon name='lucide:star'  class="h-5 w-5 fill-current text-yellow-400" />
+                      ))}
+                    </div>
+                    <p class="italic text-gray-700">"{testimonial.quote}"</p>
+                  </div>
+                  <div class="mt-6 flex items-center">
+                    <Image
+                      src={testimonial.image || "/placeholder.svg"}
+                      width={40}
+                      height={40}
+                      alt={testimonial.author}
+                      class="rounded-full mr-3"
+                    />
+                    <div>
+                      <p class="font-medium">{testimonial.author}</p>
+                      <p class="text-sm text-muted-foreground">{testimonial.company}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section class="w-full py-12 md:py-24 lg:py-32 bg-primary text-foreground">
+          <div class="container mx-auto px-4 md:px-6">
+            <div class="grid gap-6 lg:grid-cols-2 lg:gap-12">
+              <div class="flex flex-col justify-center space-y-4">
+                <div class="space-y-2">
+                  <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+                    Ready to Transform Your Online Presence?
+                  </h2>
+                  <p class="max-w-[600px] text-foreground/90 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                    Let's create a website that generates leads and grows your business. Get started with a free
+                    consultation today.
+                  </p>
+                </div>
+                <div class="flex flex-col gap-2 min-[400px]:flex-row">
+                  <a
+                    href="/free-design"
+                    class="inline-flex h-10 items-center justify-center rounded-md bg-background px-8 text-sm font-medium text-primary shadow transition-colors hover:bg-background focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950"
+                  >
+                    Get a Free Design
+                  </a>
+                  <a
+                    href="#contact"
+                    class="inline-flex h-10 items-center justify-center rounded-md border border-foreground bg-transparent px-8 text-sm font-medium text-foreground shadow-sm transition-colors hover:bg-background/10 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950"
+                  >
+                    Schedule a Call
+                  </a>
+                </div>
+              </div>
+              <div class="flex items-center justify-center">
+                <Image
+                  src="/placeholder.svg?height=400&width=600"
+                  width={600}
+                  height={400}
+                  alt="Website Design Preview"
+                  class="rounded-xl object-cover"
+                />
+          </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Contact Section */}
+        <section id="contact" class="w-full py-12 md:py-24 lg:py-32 bg-background">
+          <div class="container mx-auto px-4 md:px-6">
+            <div class="flex flex-col items-center justify-center space-y-4 text-center">
+              <div class="space-y-2">
+                <div class="inline-flex items-center justify-center rounded-full bg-foreground px-3 py-1 text-sm text-primary">
+                  Contact Us
+                </div>
+                <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+                  Let's Discuss Your Project
+                </h2>
+                <p class="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                  Fill out the form below and we'll get back to you within 24 hours.
+                </p>
+              </div>
+            </div>
+            <div class="mx-auto grid max-w-5xl grid-cols-1 gap-6 py-12 lg:grid-cols-2">
+              <div class="flex flex-col gap-4">
+                <div class="flex items-start gap-4">
+                  <div class="flex h-10 w-10 items-center justify-center rounded-full bg-foreground">
+                    <Icon name='lucide:phone' class="h-5 w-5 text-primary" />
+                  </div>
+                  <div>
+                    <h3 class="font-medium">Phone</h3>
+                    <p class="text-sm text-muted-foreground">(555) 123-4567</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-4">
+                  <div class="flex h-10 w-10 items-center justify-center rounded-full bg-foreground">
+                    <Icon name='lucide:mail' class="h-5 w-5 text-primary" />
+                  </div>
+                  <div>
+                    <h3 class="font-medium">Email</h3>
+                    <p class="text-sm text-muted-foreground">info@designcraft.com</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-4">
+                  <div class="flex h-10 w-10 items-center justify-center rounded-full bg-foreground">
+                    <Icon name='lucide:home' class="h-5 w-5 text-primary" />
+                  </div>
+                  <div>
+                    <h3 class="font-medium">Office</h3>
+                    <p class="text-sm text-muted-foreground">
+                      123 Design Street, Suite 100
+                      <br />
+                      Webville, WA 98765
+                    </p>
+                  </div>
+                </div>
+                <div class="mt-6">
+                  <h3 class="mb-4 font-medium">Follow Us</h3>
+                  <div class="flex gap-4">
+                    {["facebook", "twitter", "instagram", "linkedin"].map((social) => (
+                      <a
+                        href={`#${social}`}
+                        class="flex h-10 w-10 items-center justify-center rounded-full bg-background hover:bg-muted-foreground"
+                      >
+                        <span class="sr-only">{social}</span>
+                        <div class="h-5 w-5 text-muted-foreground" />
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              </div>
+              <div class="rounded-lg border border-muted-foreground bg-background p-6 shadow-sm">
+                <form class="space-y-4">
+                  <div class="grid grid-cols-2 gap-4">
+                    <div class="space-y-2">
+                      <label
+                        for="name"
+                        class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                      >
+                        Name
+                      </label>
+                      <input
+                        id="name"
+                        class="flex h-10 w-full rounded-md border border-muted-foreground bg-background px-3 py-2 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary"
+                        placeholder="John Smith"
+                      />
+                    </div>
+                    <div class="space-y-2">
+                      <label
+                        for="email"
+                        class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                      >
+                        Email
+                      </label>
+                      <input
+                        id="email"
+                        type="email"
+                        class="flex h-10 w-full rounded-md border border-muted-foreground bg-background px-3 py-2 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary"
+                        placeholder="john@example.com"
+                      />
+                    </div>
+                  </div>
+                  <div class="space-y-2">
+                    <label
+                      for="phone"
+                      class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                    >
+                      Phone
+                    </label>
+                    <input
+                      id="phone"
+                      type="tel"
+                      class="flex h-10 w-full rounded-md border border-muted-foreground bg-background px-3 py-2 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary"
+                      placeholder="(555) 123-4567"
+                    />
+                  </div>
+                  <div class="space-y-2">
+                    <label
+                      for="subject"
+                      class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                    >
+                      Subject
+                    </label>
+                    <input
+                      id="subject"
+                      class="flex h-10 w-full rounded-md border border-muted-foreground bg-background px-3 py-2 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary"
+                      placeholder="Website Design Inquiry"
+                    />
+                  </div>
+                  <div class="space-y-2">
+                    <label
+                      for="message"
+                      class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                    >
+                      Message
+                    </label>
+                    <textarea
+                      id="message"
+                      class="flex min-h-[120px] w-full rounded-md border border-muted-foreground bg-background px-3 py-2 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary"
+                      placeholder="Tell us about your project..."
+                    />
+                  </div>
+                  <button
+                    type="submit"
+                    class="inline-flex h-10 w-full items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-foreground shadow transition-colors hover:bg-accent focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-accent"
+                  >
+                    Send Message
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      {/* Footer */}
+      <footer class="w-full border-t border-muted-foreground bg-background py-12">
+        <div class="container mx-auto px-4 md:px-6">
+          <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+            <div class='flex items-center gap-8'>
+              <div class="flex items-center gap-2">
+              <Logo width={80} height={80} />
+              </div>
+              <p class="mt-2 text-sm text-muted-foreground">
+                We design and build websites that generate leads and grow your business.
+              </p>
+            </div>
+           
+                        <div>
+            </div>
+          </div>
+          <div class="mt-8 border-t border-muted-foreground pt-8 flex flex-col md:flex-row justify-between items-center">
+            <p class="text-xs text-muted-foreground">© {new Date().getFullYear()} LAP Media. All rights reserved.</p>
+          <ul class="space-y-2 text-sm text-muted-foreground flex gap-4">
+            <li>
+              <a href="#" class="hover:text-primary">
+                Privacy Policy
+              </a>
+            </li>
+            <li>
+              <a href="#" class="hover:text-primary">
+                Terms of Service
+              </a>
+            </li>
+          </ul>
+            <div class="flex gap-4 mt-4 md:mt-0">
+              {["facebook", "twitter", "instagram", "linkedin"].map((social) => (
+                <a
+                  href={`#${social}`}
+                  class="flex h-8 w-8 items-center justify-center rounded-full bg-muted hover:bg-muted-foreground"
+                >
+                  <span class="sr-only">{social}</span>
+                  <div class="h-4 w-4 text-muted-foreground" />
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
 </Layout>
+
+

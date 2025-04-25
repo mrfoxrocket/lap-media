@@ -1,0 +1,51 @@
+<script is:inline>
+    "use strict";
+
+    const themeToggle = () => {
+        (() => {
+            const storageKey = "theme-toggle";
+
+            function getSystemTheme() {
+                return 'dark'
+                // return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+            }
+
+            function getUserTheme() {
+                const theme = localStorage.getItem(storageKey);
+                return theme === "dark" || theme === "light" ? theme : null;
+            }
+
+            function getTheme() {
+                return getUserTheme() || getSystemTheme();
+            }
+
+            function setUserTheme(theme) {
+                if (theme === getSystemTheme()) {
+                    localStorage.removeItem(storageKey);
+                } else {
+                    localStorage.setItem(storageKey, theme);
+                }
+            }
+
+            function setStyle(theme) {
+                const root = document.documentElement;
+                root.classList.toggle("dark", theme === "dark");
+                root.style.colorScheme = theme;
+            }
+
+            function setTheme(theme) {
+                setUserTheme(theme);
+                setStyle(theme);
+            }
+
+            setTheme(getTheme());
+
+            window.astroThemeToggle = { setTheme, getTheme };
+        })();
+    };
+    themeToggle();
+
+    document.addEventListener("astro:after-swap", () => {
+        themeToggle();
+    });
+</script>
