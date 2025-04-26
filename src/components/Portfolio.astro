@@ -1,0 +1,58 @@
+---
+import example1 from "@/assets/site-example-1.png";
+import example2 from "@/assets/site-example-2.png";
+import example3 from "@/assets/site-example-3.png";
+import example4 from "@/assets/site-example-4.png";
+import example5 from "@/assets/site-example-5.png";
+import example7 from "@/assets/site-example-7.png";
+
+import { Image } from "astro:assets";
+---
+
+<section id="portfolio" class="w-full py-12 md:py-24 lg:py-32 bg-background">
+    <div class="container mx-auto px-4 md:px-6">
+        <div class="flex flex-col items-center justify-center space-y-4 text-center">
+            <div class="space-y-2">
+                <div
+                    class="inline-flex items-center justify-center rounded-full bg-muted px-3 py-1 text-sm text-primary"
+                >
+                    Our Portfolio
+                </div>
+                <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Recent Projects</h2>
+                <p
+                    class="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed"
+                >
+                    Take a look at some of our recent designs.
+                </p>
+            </div>
+        </div>
+
+        <div class="mx-auto grid max-w-5xl grid-cols-1 gap-6 py-12 md:grid-cols-2 lg:grid-cols-3">
+            {
+                [
+                    { title: "Elite Roofing Solutions", image: example1 },
+                    { title: "Heritage Roofing", image: example2 },
+                    { title: "Storm Force Roofing", image: example3 },
+                    { title: "Precision Roofing", image: example4 },
+                    { title: "Apex Roofing Systems", image: example7 },
+                    { title: "EcoRoof Solutions", image: example5 },
+                ].map((project) => (
+                    <div class="group relative overflow-hidden rounded-lg">
+                        <Image
+                            src={project.image}
+                            width={600}
+                            height={400}
+                            alt={project.title}
+                            class="w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                        />
+                        <div class="absolute inset-0 z-10 w-full h-full top-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <div class="absolute bottom-0 left-0 right-0 p-4 text-white">
+                                <h3 class="text-lg font-bold">{project.title}</h3>
+                            </div>
+                        </div>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</section>

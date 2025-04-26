@@ -1,22 +1,22 @@
 // @ts-check
-import { defineConfig } from "astro/config"
-import tailwindcss from "@tailwindcss/vite"
+import { defineConfig } from "astro/config";
+import tailwindcss from "@tailwindcss/vite";
 
-import icon from "astro-icon"
+import icon from "astro-icon";
+
+import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
-	vite: {
-		plugins: [tailwindcss()],
-	},
+    vite: {
+        plugins: [tailwindcss()],
+    },
 
-	integrations: [
-		icon({
-			iconDir: "src/assets",
-			include: {
-				tabler: ["*"],
-				lucide: ["*"],
-			},
-		}),
-	],
-})
+    integrations: [icon({
+        iconDir: "src/assets",
+        include: {
+            tabler: ["*"],
+            lucide: ["*"],
+        },
+    }), react()],
+});

@@ -1,0 +1,67 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<section id="services" class="w-full py-12 md:py-24 lg:py-32 bg-background">
+    <div class="container mx-auto px-4 md:px-6">
+        <div class="flex flex-col items-center justify-center space-y-4 text-center">
+            <div class="space-y-2">
+                <div
+                    class="inline-flex items-center justify-center rounded-full bg-muted/50 px-3 py-1 text-sm text-foreground"
+                >
+                    Our Services
+                </div>
+                <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Comprehensive Web Solutions</h2>
+                <p
+                    class="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed"
+                >
+                    We offer end-to-end web design and development services to help your business succeed online.
+                </p>
+            </div>
+        </div>
+        <div class="mx-auto grid max-w-5xl grid-cols-1 gap-6 py-12 md:grid-cols-2 lg:grid-cols-3">
+            {
+                [
+                    {
+                        icon: <Icon name="lucide:layout" class="h-10 w-10 text-primary" />,
+                        title: "Website Design",
+                        description:
+                            "Custom, responsive website designs that reflect your brand and engage your visitors.",
+                    },
+                    {
+                        icon: <Icon name="lucide:code" class="h-10 w-10 text-primary" />,
+                        title: "Web Development",
+                        description:
+                            "Clean, efficient code that ensures your website loads quickly and functions flawlessly.",
+                    },
+                    {
+                        icon: <Icon name="lucide:home" class="h-10 w-10 text-primary" />,
+                        title: "Roofing Websites",
+                        description: "Specialized websites for roofing companies designed to generate quality leads.",
+                    },
+                    {
+                        icon: <Icon name="lucide:search" class="h-10 w-10 text-primary" />,
+                        title: "SEO Optimization",
+                        description: "On-page and technical SEO to help your website rank higher in search results.",
+                    },
+                    {
+                        icon: <Icon name="lucide:message-square" class="h-10 w-10 text-primary" />,
+                        title: "Content Creation",
+                        description: "Compelling copy and content that speaks to your audience and drives conversions.",
+                    },
+                    {
+                        icon: <Icon name="lucide:globe" class="h-10 w-10 text-primary" />,
+                        title: "Website Maintenance",
+                        description: "Ongoing support and maintenance to keep your website secure and up-to-date.",
+                    },
+                ].map((service, i) => (
+                    <div class="group relative overflow-hidden rounded-lg border border-muted-foreground bg-background p-6 shadow-sm transition-all hover:shadow-md">
+                        <div class="mb-4">{service.icon}</div>
+                        <h3 class="mb-2 text-xl font-bold">{service.title}</h3>
+                        <p class="text-muted-foreground">{service.description}</p>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</section>

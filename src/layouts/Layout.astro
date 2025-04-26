@@ -1,24 +1,24 @@
 ---
-import { ClientRouter } from "astro:transitions"
-import ThemeScript from "@/theme/ThemeScript.astro"
-import "@/main.css"
+import { ClientRouter } from "astro:transitions";
+import ThemeScript from "@/theme/ThemeScript.astro";
+
+import CalendarButton from "../components/CalendarButton.astro";
+import "@/main.css";
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-
-        <ClientRouter />
+    <head>
+        <ClientRouter transition:animate={"fade"} />
         <ThemeScript />
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>LAP Media</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="generator" content={Astro.generator} />
+        <title>LAP Media</title>
+    </head>
+    <body>
+        <slot />
+        <CalendarButton />
+    </body>
 </html>
-
-

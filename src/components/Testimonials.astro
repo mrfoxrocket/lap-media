@@ -1,0 +1,76 @@
+---
+import logo2 from "@/assets/company-logo-2.jpg";
+import logo3 from "@/assets/company-logo-3.jpg";
+import logo4 from "@/assets/company-logo-4.jpg";
+
+import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
+---
+
+<section id="testimonials" class="w-full py-12 bg-background">
+    <div class="container mx-auto px-4 md:px-6">
+        <div class="flex flex-col items-center justify-center space-y-4 text-center">
+            <div class="space-y-2">
+                <div
+                    class="inline-flex items-center justify-center rounded-full bg-muted px-3 py-1 text-sm text-primary"
+                >
+                    Testimonials
+                </div>
+                <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">What Our Clients Say</h2>
+                <p
+                    class="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed"
+                >
+                    Don't just take our word for it. Here's what our clients have to say about working with us.
+                </p>
+            </div>
+        </div>
+        <div class="mx-auto grid max-w-5xl grid-cols-1 gap-6 py-12 md:grid-cols-2 lg:grid-cols-3">
+            {
+                [
+                    {
+                        quote: "Working with Luka was a game-changer for our roofing business. Our new website has increased our leads by 40% in just two months!",
+                        author: "Mike Johnson",
+                        company: "Johnson Roofing",
+                        image: logo3,
+                    },
+                    {
+                        quote: "The team at LAP Media understood exactly what our construction company needed. The website they designed is beautiful and brings in new clients every week.",
+                        author: "Sarah Rodriguez",
+                        company: "Cornerstone Roofing",
+                        image: logo4,
+                    },
+                    {
+                        quote: "I was blown away by the quality of work and attention to detail. Our new website perfectly represents our brand and has significantly improved our online presence.",
+                        author: "David Thompson",
+                        company: "Apex Roof Systems",
+                        image: logo2,
+                    },
+                ].map((testimonial, i) => (
+                    <div class="flex flex-col justify-between rounded-lg border border-muted-foreground bg-background p-6 shadow-sm">
+                        <div>
+                            <div class="flex mb-4">
+                                {[1, 2, 3, 4, 5].map(() => (
+                                    <Icon name="mdi:star" class="h-5 w-5 fill-current text-yellow-400" />
+                                ))}
+                            </div>
+                            <p class="italic text-muted-foreground">"{testimonial.quote}"</p>
+                        </div>
+                        <div class="mt-6 flex items-center">
+                            <Image
+                                src={testimonial.image || "/placeholder.svg"}
+                                width={40}
+                                height={40}
+                                alt={testimonial.author}
+                                class="rounded-full mr-3"
+                            />
+                            <div>
+                                <p class="font-medium">{testimonial.author}</p>
+                                <p class="text-sm text-muted-foreground">{testimonial.company}</p>
+                            </div>
+                        </div>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</section>
