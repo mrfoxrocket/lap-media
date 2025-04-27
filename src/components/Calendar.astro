@@ -33,15 +33,15 @@
                 p(cal, ar);
             };
     })(window, "https://app.cal.com/embed/embed.js", "init");
-    Cal("init", "30min", { origin: "https://cal.com" });
+    Cal("init", "15min", { origin: "https://cal.com" });
 
-    Cal.ns["30min"]("inline", {
+    Cal.ns["15min"]("inline", {
         elementOrSelector: "#calendar",
         config: { layout: "month_view" },
-        calLink: "lap-media/30min",
+        calLink: "lap-media/15min",
     });
 
-    Cal.ns["30min"]("ui", {
+    Cal.ns["15min"]("ui", {
         cssVarsPerTheme: {
             light: { "cal-brand": "#2496E2" },
             dark: { "cal-brand": "#2496E2" },

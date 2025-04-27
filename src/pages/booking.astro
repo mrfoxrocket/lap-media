@@ -1,6 +1,5 @@
 ---
-import "@/main.css";
-
+import Layout from "../layouts/Layout.astro";
 import Logo from "@/assets/logo.svg";
 import Calendar from "../components/Calendar.astro";
 import Testimonials from "../components/Testimonials.astro";
@@ -9,206 +8,210 @@ import { Icon } from "astro-icon/components";
 import example1 from "@/assets/site-example-1.png";
 import example2 from "@/assets/site-example-2.png";
 import example3 from "@/assets/site-example-3.png";
-
 import { Image } from "astro:assets";
 ---
 
-<div class="flex flex-col min-h-screen bg-white">
-    <div class="flex flex-col min-h-screen bg-gray-100">
-        {/* Header */}
-        <header class="sticky top-0 z-50 w-full bg-background border-b border-muted-foreground">
-            <div class="container mx-auto px-4 md:px-6 flex min-h-16 items-center justify-between">
-                <div class="flex items-center gap-2">
-                    <Logo width={100} height={100} />
+<Layout>
+    <div class="flex flex-col min-h-screen bg-background">
+        <div class="flex flex-col min-h-screen bg-muted">
+            {/* Header */}
+            <header class="sticky top-0 z-50 w-full bg-background border-b border-muted-foreground">
+                <div class="container mx-auto px-4 md:px-6 flex min-h-16 items-center justify-between">
+                    <div class="flex items-center gap-2">
+                        <Logo width={100} height={100} />
+                    </div>
                 </div>
-            </div>
-        </header>
+            </header>
 
-        {/* Hero Section */}
-        <section class="w-full py-12 px-4 bg-white border-b border-gray-200">
-            <div class="container mx-auto max-w-4xl text-center">
-                <h1 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-6 uppercase tracking-tight">
-                    GET A FREE WEBSITE DESIGN FOR YOUR ROOFING COMPANY...
-                </h1>
-                <h2 class="text-xl md:text-2xl font-bold text-gray-700 mb-6 uppercase">
-                    WE WILL DESIGN YOUR WEBSITE FOR FREE, IF YOU LIKE IT YOU CAN HAVE THE DESIGN, IF YOU REALLY LIKE IT
-                    WE WILL BUILD IT FOR YOU
-                </h2>
-                <div class="flex items-center justify-center my-12">
-                    <div class="relative w-full max-w-[600px] h-[400px]">
-                        {/* Background blur effects */}
-                        <div class="absolute -top-6 -left-6 h-24 w-24 rounded-full bg-purple-500 blur-xl"></div>
-                        <div class="absolute -bottom-6 -right-6 h-24 w-24 rounded-full bg-primary blur-xl"></div>
+            {/* Hero Section */}
+            <section class="w-full py-12 px-4 bg-background border-b border-muted-foreground">
+                <div class="container mx-auto max-w-4xl text-center">
+                    <h1 class="text-3xl md:text-4xl font-extrabold text-foreground mb-6 uppercase tracking-tight">
+                        GET A FREE WEBSITE DESIGN FOR YOUR ROOFING COMPANY...
+                    </h1>
+                    <h2 class="text-xl md:text-2xl font-bold text-muted-foreground mb-6 uppercase">
+                        WE WILL DESIGN YOUR WEBSITE FOR FREE, IF YOU LIKE IT YOU CAN HAVE THE DESIGN, IF YOU REALLY LIKE
+                        IT WE WILL BUILD IT FOR YOU
+                    </h2>
+                    <div class="flex items-center justify-center my-12">
+                        <div class="relative w-full max-w-[600px] h-[400px]">
+                            {/* Background blur effects */}
+                            <div class="absolute -top-6 -left-6 h-24 w-24 rounded-full bg-purple-500 blur-xl"></div>
+                            <div class="absolute -bottom-6 -right-6 h-24 w-24 rounded-full bg-primary blur-xl"></div>
 
-                        {/* Layered images */}
-                        <div class="absolute top-0 left-0 w-[80%] h-[80%] transform rotate-[-4deg] z-10">
-                            <div
-                                class="w-full h-full overflow-hidden rounded-xl border-4 border-white bg-background shadow-lg"
-                            >
-                                <Image
-                                    src={example1}
-                                    width={600}
-                                    height={500}
-                                    alt="Roofing Project Example"
-                                    class="w-full h-full object-cover"
-                                />
+                            {/* Layered images */}
+                            <div class="absolute top-0 left-0 w-[80%] h-[80%] transform rotate-[-4deg] z-10">
+                                <div
+                                    class="w-full h-full overflow-hidden rounded-xl border-4 border-white bg-background shadow-lg"
+                                >
+                                    <Image
+                                        src={example1}
+                                        width={600}
+                                        height={500}
+                                        alt="Roofing Project Example"
+                                        class="w-full h-full object-cover"
+                                    />
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="absolute top-[15%] right-0 w-[70%] h-[70%] transform rotate-[2deg] z-20">
-                            <div
-                                class="w-full h-full overflow-hidden rounded-xl border-4 border-white bg-background shadow-lg"
-                            >
-                                <Image
-                                    src={example3}
-                                    width={500}
-                                    height={400}
-                                    alt="Home Exterior Design"
-                                    class="w-full h-full object-cover"
-                                />
+                            <div class="absolute top-[15%] right-0 w-[70%] h-[70%] transform rotate-[2deg] z-20">
+                                <div
+                                    class="w-full h-full overflow-hidden rounded-xl border-4 border-white bg-background shadow-lg"
+                                >
+                                    <Image
+                                        src={example3}
+                                        width={500}
+                                        height={400}
+                                        alt="Home Exterior Design"
+                                        class="w-full h-full object-cover"
+                                    />
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="absolute bottom-0 left-[20%] w-[60%] h-[60%] transform rotate-[6deg] z-30">
-                            <div
-                                class="w-full h-full overflow-hidden rounded-xl border-4 border-white bg-background shadow-lg"
-                            >
-                                <Image
-                                    src={example2}
-                                    width={450}
-                                    height={350}
-                                    alt="Website Design Preview"
-                                    class="w-full h-full object-cover"
-                                />
+                            <div class="absolute bottom-0 left-[20%] w-[60%] h-[60%] transform rotate-[6deg] z-30">
+                                <div
+                                    class="w-full h-full overflow-hidden rounded-xl border-4 border-white bg-background shadow-lg"
+                                >
+                                    <Image
+                                        src={example2}
+                                        width={450}
+                                        height={350}
+                                        alt="Website Design Preview"
+                                        class="w-full h-full object-cover"
+                                    />
+                                </div>
                             </div>
                         </div>
                     </div>
+
+                    <p class="text-lg font-semibold text-primary mb-8">Just 10 free designs available</p>
+                    <a
+                        href="#calendar"
+                        class="px-8 py-4 bg-primary text-white rounded font-bold text-lg hover:bg-accent transition-colors uppercase"
+                    >
+                        GET MY FREE DESIGN!
+                    </a>
                 </div>
+            </section>
 
-                <p class="text-lg font-semibold text-primary mb-8">Just 10 free designs available</p>
-                <a
-                    href="#calendar"
-                    class="px-8 py-4 bg-primary text-white rounded font-bold text-lg hover:bg-accent transition-colors uppercase"
-                >
-                    GET MY FREE DESIGN!
-                </a>
-            </div>
-        </section>
+            <Testimonials />
+            <Portfolio />
 
-        <Testimonials />
-        <Portfolio />
-
-        {/* Main Content */}
-        <section class="w-full py-10 px-4 bg-gray-100 border-b border-gray-200">
-            <div class="container mx-auto max-w-3xl">
-                <h3 class="text-2xl font-bold text-center mb-6">
-                    "Let's build a website that works as hard as you do."
-                </h3>
-                <div class="space-y-4 text-gray-700">
-                    <p>
-                        At LAP Media, we specialize in designing websites for roofing companies that not only look great
-                        but bring in organic leads and grow your business. If you've been struggling with a website that
-                        doesn't convert, been spending too much money on ads with no results, or you're just ready for a
-                        redesign, you're in the right place.
-                    </p>
-                    <p>
-                        We know what it takes to create high-performing, lead-generating websites in the roofing
-                        industry. Our team is dedicated to giving you a digital presence that drives results, and we're
-                        here to make the process easy and straightforward.
-                    </p>
-                    <p>
-                        A great website starts with understanding your business. That's why we're offering a free,
-                        no-obligation custom mock-up of your website, designed specifically for your roofing business.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        {/* How It Works */}
-        <section class="w-full py-10 px-4 bg-white border-b border-gray-200">
-            <div class="container mx-auto max-w-3xl">
-                <h2 class="text-2xl font-bold text-center mb-8">Here's How It Works</h2>
-                <div class="bg-gray-100 p-6 rounded">
-                    <ol class="list-decimal pl-6 space-y-4">
-                        <li class="font-medium">
-                            <span class="font-bold">Schedule Your Free Consultation:</span> Book a call with us, where we'll
-                            learn about your business, your goals, and how your website can help you grow.
-                        </li>
-                        <li class="font-medium">
-                            <span class="font-bold">We Create Your Custom Mock-Up:</span> After the call, we'll craft a personalized
-                            mock-up design that reflects your brand and is built to convert visitors into leads.
-                        </li>
-                        <li class="font-medium">
-                            <span class="font-bold">Review the Mock-Up with Us:</span> We'll schedule a follow-up call to
-                            walk you through the design. If you love it, you're welcome to use it however you'd like.
-                        </li>
-                        <li class="font-medium">
-                            <span class="font-bold">Let Us Build It for You:</span> If you want to take it to the next level,
-                            we can turn your mock-up into a fully functional website that drives results for your business.
-                        </li>
-                    </ol>
-                    <p class="mt-4 font-medium text-center">
-                        No gimmicks, no commitments—just a free design to see how we can help.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        {/* Final CTA */}
-        <section class="w-full py-12 px-4 bg-gray-100">
-            <div class="mx-auto max-w-3xl text-center">
-                <p class="text-lg font-semibold text-primary mb-6">Just 10 free designs available</p>
-                <button
-                    class="px-8 py-4 bg-primary text-white rounded font-bold text-lg hover:bg-accent transition-colors uppercase mb-8"
-                >
-                    GET MY FREE DESIGN!
-                </button>
-
-                {/* Calendar Placeholder */}
-                <h3 class="text-xl font-bold mb-4">Schedule Your Free Consultation</h3>
-            </div>
-            <Calendar />
-        </section>
-
-        {/* Footer */}
-        <footer class="w-full border-t border-muted-foreground bg-background py-12">
-            <div class="container mx-auto px-4 md:px-6">
-                <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-                    <div class="flex items-center gap-8">
-                        <div class="flex items-center gap-2">
-                            <Logo width={80} height={80} />
-                        </div>
-                        <p class="mt-2 text-sm text-muted-foreground">
-                            We don’t just build websites — we build organic lead machines for roofing companies.
+            {/* Main Content */}
+            <section class="w-full py-10 px-4 bg-muted border-b border-muted-foreground">
+                <div class="container mx-auto max-w-3xl">
+                    <h3 class="text-2xl font-bold text-center mb-6">
+                        "Let's build a website that works as hard as you do."
+                    </h3>
+                    <div class="space-y-4 text-muted-foreground">
+                        <p>
+                            At LAP Media, we specialize in designing websites for roofing companies that not only look
+                            great but bring in organic leads and grow your business. If you've been struggling with a
+                            website that doesn't convert, been spending too much money on ads with no results, or you're
+                            just ready for a redesign, you're in the right place.
+                        </p>
+                        <p>
+                            We know what it takes to create high-performing, lead-generating websites in the roofing
+                            industry. Our team is dedicated to giving you a digital presence that drives results, and
+                            we're here to make the process easy and straightforward.
+                        </p>
+                        <p>
+                            A great website starts with understanding your business. That's why we're offering a free,
+                            no-obligation custom mock-up of your website, designed specifically for your roofing
+                            business.
                         </p>
                     </div>
-
-                    <div></div>
                 </div>
-                <div
-                    class="mt-8 border-t border-muted-foreground pt-8 flex flex-col md:flex-row justify-between items-center"
-                >
-                    <p class="text-xs text-muted-foreground">
-                        © {new Date().getFullYear()} LAP Media. All rights reserved.
-                    </p>
-                    <ul class="space-y-2 text-sm text-muted-foreground flex gap-4">
-                        <li>
-                            <a href="#" class="hover:text-primary"> Privacy Policy </a>
-                        </li>
-                        <li>
-                            <a href="#" class="hover:text-primary"> Terms of Service </a>
-                        </li>
-                    </ul>
-                    <div class="flex gap-4 mt-4 md:mt-0">
-                        <a
-                            href={`https://facebook.com/lapmedia.agency`}
-                            class="flex h-8 w-8 items-center justify-center rounded-full bg-muted hover:bg-muted-foreground"
-                        >
-                            <Icon name="lucide:facebook" />
-                        </a>
+            </section>
+
+            {/* How It Works */}
+            <section class="w-full py-10 px-4 bg-background border-b border-muted-foreground">
+                <div class="container mx-auto max-w-3xl">
+                    <h2 class="text-2xl font-bold text-center mb-8">Here's How It Works</h2>
+                    <div class="bg-muted p-6 rounded">
+                        <ol class="list-decimal pl-6 space-y-4">
+                            <li class="font-medium">
+                                <span class="font-bold">Schedule Your Free Consultation:</span> Book a call with us, where
+                                we'll learn about your business, your goals, and how your website can help you grow.
+                            </li>
+                            <li class="font-medium">
+                                <span class="font-bold">We Create Your Custom Mock-Up:</span> After the call, we'll craft
+                                a personalized mock-up design that reflects your brand and is built to convert visitors into
+                                leads.
+                            </li>
+                            <li class="font-medium">
+                                <span class="font-bold">Review the Mock-Up with Us:</span> We'll schedule a follow-up call
+                                to walk you through the design. If you love it, you're welcome to use it however you'd like.
+                            </li>
+                            <li class="font-medium">
+                                <span class="font-bold">Let Us Build It for You:</span> If you want to take it to the next
+                                level, we can turn your mock-up into a fully functional website that drives results for your
+                                business.
+                            </li>
+                        </ol>
+                        <p class="mt-4 font-medium text-center">
+                            No gimmicks, no commitments—just a free design to see how we can help.
+                        </p>
                     </div>
                 </div>
-            </div>
-        </footer>
+            </section>
+
+            {/* Final CTA */}
+            <section class="w-full py-12 px-4 bg-muted">
+                <div class="mx-auto max-w-3xl text-center">
+                    <p class="text-lg font-semibold text-primary mb-6">Just 10 free designs available</p>
+                    <button
+                        class="px-8 py-4 bg-primary text-white rounded font-bold text-lg hover:bg-accent transition-colors uppercase mb-8"
+                    >
+                        GET MY FREE DESIGN!
+                    </button>
+
+                    {/* Calendar Placeholder */}
+                    <h3 class="text-xl font-bold mb-4">Schedule Your Free Consultation</h3>
+                </div>
+                <Calendar />
+            </section>
+
+            {/* Footer */}
+            <footer class="w-full border-t border-muted-foreground bg-background py-12">
+                <div class="container mx-auto px-4 md:px-6">
+                    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+                        <div class="flex items-center gap-8">
+                            <div class="flex items-center gap-2">
+                                <Logo width={80} height={80} />
+                            </div>
+                            <p class="mt-2 text-sm text-muted-foreground">
+                                We don’t just build websites — we build organic lead machines for roofing companies.
+                            </p>
+                        </div>
+
+                        <div></div>
+                    </div>
+                    <div
+                        class="mt-8 border-t border-muted-foreground pt-8 flex flex-col md:flex-row justify-between items-center"
+                    >
+                        <p class="text-xs text-muted-foreground">
+                            © {new Date().getFullYear()} LAP Media. All rights reserved.
+                        </p>
+                        <ul class="space-y-2 text-sm text-muted-foreground flex gap-4">
+                            <li>
+                                <a href="#" class="hover:text-primary"> Privacy Policy </a>
+                            </li>
+                            <li>
+                                <a href="#" class="hover:text-primary"> Terms of Service </a>
+                            </li>
+                        </ul>
+                        <div class="flex gap-4 mt-4 md:mt-0">
+                            <a
+                                href={`https://facebook.com/lapmedia.agency`}
+                                class="flex h-8 w-8 items-center justify-center rounded-full bg-muted hover:bg-muted-foreground"
+                            >
+                                <Icon name="lucide:facebook" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
     </div>
-</div>
+</Layout>

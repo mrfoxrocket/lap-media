@@ -1,6 +1,8 @@
 ---
 import { ClientRouter } from "astro:transitions";
 import ThemeScript from "@/theme/ThemeScript.astro";
+import Posthog from "@/components/posthog.astro";
+import Pixel from "@/components/pixel.astro";
 
 import CalendarButton from "../components/CalendarButton.astro";
 import "@/main.css";
@@ -9,6 +11,8 @@ import "@/main.css";
 <!doctype html>
 <html lang="en">
     <head>
+        <Pixel />
+        <Posthog />
         <ClientRouter transition:animate={"fade"} />
         <ThemeScript />
         <meta charset="UTF-8" />

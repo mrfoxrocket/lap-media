@@ -32,15 +32,15 @@
                 p(cal, ar);
             };
     })(window, "https://app.cal.com/embed/embed.js", "init");
-    Cal("init", "30min", { origin: "https://cal.com" });
+    Cal("init", "15min", { origin: "https://cal.com" });
 
-    Cal.ns["30min"]("floatingButton", {
-        calLink: "lap-media/30min",
+    Cal.ns["15min"]("floatingButton", {
+        calLink: "lap-media/15min",
         config: { layout: "month_view" },
         buttonText: "Book a Call",
         buttonColor: "#2496E2",
     });
-    Cal.ns["30min"]("ui", {
+    Cal.ns["15min"]("ui", {
         cssVarsPerTheme: { light: { "cal-brand": "#2496E2" }, dark: { "cal-brand": "#2496E2" } },
         hideEventTypeDetails: false,
         layout: "month_view",
