@@ -1,11 +1,12 @@
 ---
+import "@/main.css";
+
 import { ClientRouter } from "astro:transitions";
 import ThemeScript from "@/theme/ThemeScript.astro";
+import CalendarButton from "../components/CalendarButton.astro";
+
 import Posthog from "@/components/posthog.astro";
 import Pixel from "@/components/pixel.astro";
-
-import CalendarButton from "../components/CalendarButton.astro";
-import "@/main.css";
 ---
 
 <!doctype html>
@@ -18,6 +19,9 @@ import "@/main.css";
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="shortcut icon" href={"/favicon.ico"} />
+        <link rel="mask-icon" href={"/favicon.svg"} />
+        <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" } />
         <meta name="generator" content={Astro.generator} />
         <title>LAP Media</title>
     </head>
