@@ -15,8 +15,12 @@
         s = b.getElementsByTagName(e)[0];
         s.parentNode.insertBefore(t, s);
     })(window, document, "script", "https://connect.facebook.net/en_US/fbevents.js");
-    fbq("init", "1051825026840578");
-    fbq("track", "PageView");
+
+    // Delay tracking until script is ready
+    window.addEventListener("load", function () {
+        fbq("init", "${pixelId}");
+        fbq("track", "PageView");
+    });
 </script>
 <noscript
     ><img
