@@ -6,6 +6,8 @@ import icon from "astro-icon";
 
 import react from "@astrojs/react";
 
+import partytown from "@astrojs/partytown";
+
 // https://astro.build/config
 export default defineConfig({
     vite: {
@@ -18,5 +20,5 @@ export default defineConfig({
             tabler: ["*"],
             lucide: ["*"],
         },
-    }), react()],
+    }), react(), partytown()],
 });
