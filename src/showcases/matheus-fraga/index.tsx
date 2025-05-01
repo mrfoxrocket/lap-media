@@ -9,6 +9,7 @@ import RoofingCalculator from "./roofing-calculator";
 import ServiceCard from "./service-card";
 import SiteHeader from "./site-header";
 import TestimonialCard from "./testimonial-card";
+import { InfiniteMovingCardsDemo } from "./infinite-testimonial";
 
 export default function Home() {
     return (
@@ -131,32 +132,32 @@ export default function Home() {
                         </div>
                         <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
                             <div className="grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100">
-                                <image
-                                    href="https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                <img
+                                    src="https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                                     width={120}
                                     height={40}
                                     className="h-8 w-auto object-contain bg-white/80 rounded px-2"
                                 />
                             </div>
                             <div className="grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100">
-                                <image
-                                    href="https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                <img
+                                    src="https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                                     width={120}
                                     height={40}
                                     className="h-8 w-auto object-contain bg-white/80 rounded px-2"
                                 />
                             </div>
                             <div className="grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100">
-                                <image
-                                    href="https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                <img
+                                    src="https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                                     width={120}
                                     height={40}
                                     className="h-8 w-auto object-contain bg-white/80 rounded px-2"
                                 />
                             </div>
                             <div className="grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100">
-                                <image
-                                    href="https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                <img
+                                    src="https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                                     width={120}
                                     height={40}
                                     alt="Client logo"
@@ -164,8 +165,8 @@ export default function Home() {
                                 />
                             </div>
                             <div className="grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100">
-                                <image
-                                    href="https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                <img
+                                    src="https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                                     width={120}
                                     height={40}
                                     className="h-8 w-auto object-contain bg-white/80 rounded px-2"
@@ -196,8 +197,8 @@ export default function Home() {
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                             <div className="md:col-span-3 relative overflow-hidden rounded-2xl">
                                 <div className="absolute inset-0 bg-linear-to-r from-primary/90 to-teal-600/90 z-10" />
-                                <image
-                                    href="https://images.unsplash.com/photo-1632823469850-2f77dd9c7f93?q=80&w=2070&auto=format&fit=crop"
+                                <img
+                                    src="https://images.unsplash.com/photo-1632823469850-2f77dd9c7f93?q=80&w=2070&auto=format&fit=crop"
                                     width={1200}
                                     height={300}
                                     className="w-full h-48 md:h-64 object-cover"
@@ -291,8 +292,8 @@ export default function Home() {
                                 <div className="relative grid grid-cols-2 gap-4">
                                     <div className="space-y-4">
                                         <div className="rounded-2xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300">
-                                            <image
-                                                href="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=2070&auto=format&fit=crop"
+                                            <img
+                                                src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=2070&auto=format&fit=crop"
                                                 width={250}
                                                 height={300}
                                                 alt="Our team at work"
@@ -300,8 +301,8 @@ export default function Home() {
                                             />
                                         </div>
                                         <div className="rounded-2xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300">
-                                            <image
-                                                href="https://images.unsplash.com/photo-1582653291997-079a1c04e5a1?q=80&w=2070&auto=format&fit=crop"
+                                            <img
+                                                src="https://images.unsplash.com/photo-1582653291997-079a1c04e5a1?q=80&w=2070&auto=format&fit=crop"
                                                 width={250}
                                                 height={200}
                                                 alt="Completed project"
@@ -311,8 +312,8 @@ export default function Home() {
                                     </div>
                                     <div className="space-y-4 pt-10">
                                         <div className="rounded-2xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300">
-                                            <image
-                                                href="https://images.unsplash.com/photo-1635424715426-9083bcb9b429?q=80&w=2068&auto=format&fit=crop"
+                                            <img
+                                                src="https://images.unsplash.com/photo-1635424715426-9083bcb9b429?q=80&w=2068&auto=format&fit=crop"
                                                 width={250}
                                                 height={200}
                                                 alt="Roofing materials"
@@ -320,8 +321,8 @@ export default function Home() {
                                             />
                                         </div>
                                         <div className="rounded-2xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300">
-                                            <image
-                                                href="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2070&auto=format&fit=crop"
+                                            <img
+                                                src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2070&auto=format&fit=crop"
                                                 width={250}
                                                 height={300}
                                                 alt="Waterproofing process"
@@ -463,6 +464,8 @@ export default function Home() {
                     </div>
                 </section>
 
+                <InfiniteMovingCardsDemo />
+
                 {/* Testimonials */}
                 <section id="testimonials" className="py-20">
                     <div className="container space-y-12">
@@ -472,7 +475,7 @@ export default function Home() {
                                 <span className="text-sm font-medium text-primary">Testimonials</span>
                                 <div className="h-px w-8 bg-primary"></div>
                             </div>
-                            <h2 className="text-3xl md:text-4xl font-bold">What Canterbury Homeowners Say</h2>
+                            <h2 className="text-3xl md:text-4xl font-bold">What Our Clients Say</h2>
                             <p className="text-muted-foreground text-lg">
                                 Don't just take our word for it - hear from satisfied clients across the region
                             </p>
@@ -536,8 +539,8 @@ export default function Home() {
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                             <div className="group relative overflow-hidden rounded-xl shadow-lg">
                                 <div className="absolute inset-0 bg-linear-to-t from-black/70 to-transparent z-10 opacity-80 group-hover:opacity-100 transition-opacity"></div>
-                                <image
-                                    href="https://images.unsplash.com/photo-1591588582259-e675bd2e6088?q=80&w=2070&auto=format&fit=crop"
+                                <img
+                                    src="https://images.unsplash.com/photo-1591588582259-e675bd2e6088?q=80&w=2070&auto=format&fit=crop"
                                     width={600}
                                     height={400}
                                     className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110"
@@ -568,8 +571,8 @@ export default function Home() {
 
                             <div className="group relative overflow-hidden rounded-xl shadow-lg">
                                 <div className="absolute inset-0 bg-linear-to-t from-black/70 to-transparent z-10 opacity-80 group-hover:opacity-100 transition-opacity"></div>
-                                <image
-                                    href="https://images.unsplash.com/photo-1565636291277-cd0d6a92d451?q=80&w=2070&auto=format&fit=crop"
+                                <img
+                                    src="https://images.unsplash.com/photo-1565636291277-cd0d6a92d451?q=80&w=2070&auto=format&fit=crop"
                                     width={600}
                                     height={400}
                                     className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110"
@@ -600,8 +603,8 @@ export default function Home() {
 
                             <div className="group relative overflow-hidden rounded-xl shadow-lg">
                                 <div className="absolute inset-0 bg-linear-to-t from-black/70 to-transparent z-10 opacity-80 group-hover:opacity-100 transition-opacity"></div>
-                                <image
-                                    href="https://images.unsplash.com/photo-1597047084897-51e81819a499?q=80&w=2069&auto=format&fit=crop"
+                                <img
+                                    src="https://images.unsplash.com/photo-1597047084897-51e81819a499?q=80&w=2069&auto=format&fit=crop"
                                     width={600}
                                     height={400}
                                     className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110"
@@ -674,7 +677,7 @@ export default function Home() {
                                             <h3 className="font-medium">Email Us</h3>
                                         </div>
                                         <a
-                                            href="mailto:info@canterburyroofing.co.nz"
+                                            src="mailto:info@canterburyroofing.co.nz"
                                             className="text-lg font-medium hover:underline"
                                         >
                                             info@canterburyroofing.co.nz
