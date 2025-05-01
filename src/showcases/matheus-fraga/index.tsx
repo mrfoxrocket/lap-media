@@ -12,19 +12,19 @@ import TestimonialCard from "./testimonial-card";
 
 export default function Home() {
     return (
-        <div className="flex min-h-screen flex-col bg-gradient-to-b from-white to-gray-50">
+        <div className="flex min-h-screen flex-col transition-colors bg-linear-to-b from-white to-gray-50">
             <SiteHeader />
             <main className="flex-1">
                 {/* Hero Section */}
                 <section className="relative overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-primary/70 z-10" />
+                    <div className="absolute inset-0 bg-linear-to-r from-black/70 to-primary/70 z-10" />
                     <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1632759145351-1d592919f522?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center" />
                     <div className="absolute inset-0 mix-blend-overlay opacity-20 bg-[url('/placeholder.svg?height=100&width=100')] bg-repeat" />
 
                     <div className="container relative z-20 py-20 md:py-32 lg:py-40">
                         <div className="grid md:grid-cols-2 gap-12 items-center">
                             <div className="space-y-6">
-                                <div className="inline-block rounded-full bg-white/10 backdrop-blur-sm px-4 py-1 text-sm text-white border border-white/20">
+                                <div className="inline-block rounded-full bg-white/10 backdrop-blur-xs px-4 py-1 text-sm text-white border border-white/20">
                                     Christchurch's Most Trusted Roofing Specialists
                                 </div>
                                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
@@ -36,7 +36,11 @@ export default function Home() {
                                     Canterbury's unique climate.
                                 </p>
                                 <div className="flex flex-wrap gap-4">
-                                    <Button size="lg" asChild className="bg-white text-primary hover:bg-white/90 group">
+                                    <Button
+                                        size="lg"
+                                        asChild
+                                        className="bg-primary text-white hover:bg-primary/80 group"
+                                    >
                                         <a href="#contact" className="flex items-center gap-2">
                                             Get a Free Quote
                                             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -46,34 +50,34 @@ export default function Home() {
                                         size="lg"
                                         variant="outline"
                                         asChild
-                                        className="border-white text-white hover:bg-white/20"
+                                        className="border-white text-primary hover:bg-white/80"
                                     >
                                         <a href="#calculator">Estimate Your Project</a>
                                     </Button>
                                 </div>
                                 <div className="flex flex-wrap gap-6 pt-4">
                                     <div className="flex items-center gap-2">
-                                        <div className="rounded-full bg-white/20 p-1">
-                                            <CheckCircle className="h-4 w-4 text-teal-300" />
+                                        <div className="rounded-full bg-teal-300/50 p-1">
+                                            <CheckCircle className="h-4 w-4 text-white" />
                                         </div>
                                         <span className="text-white text-sm">15+ Years Experience</span>
                                     </div>
                                     <div className="flex items-center gap-2">
-                                        <div className="rounded-full bg-white/20 p-1">
-                                            <CheckCircle className="h-4 w-4 text-teal-300" />
+                                        <div className="rounded-full bg-teal-300/50 p-1">
+                                            <CheckCircle className="h-4 w-4 text-white" />
                                         </div>
                                         <span className="text-white text-sm">Canterbury Owned</span>
                                     </div>
                                     <div className="flex items-center gap-2">
-                                        <div className="rounded-full bg-white/20 p-1">
-                                            <CheckCircle className="h-4 w-4 text-teal-300" />
+                                        <div className="rounded-full bg-teal-300/50 p-1">
+                                            <CheckCircle className="h-4 w-4 text-white" />
                                         </div>
                                         <span className="text-white text-sm">10 Year Warranty</span>
                                     </div>
                                 </div>
                             </div>
                             <div className="relative">
-                                <div className="absolute -inset-1 bg-gradient-to-r from-teal-500 to-primary rounded-2xl blur-lg opacity-70"></div>
+                                <div className="absolute -inset-1 bg-linear-to-r from-teal-500 to-primary rounded-2xl blur-lg opacity-70"></div>
                                 <Card className="relative overflow-hidden border-0 shadow-2xl">
                                     <CardContent className="p-0">
                                         <div className="absolute top-4 right-4 z-10 bg-primary text-white text-sm font-medium px-3 py-1 rounded-full">
@@ -103,7 +107,7 @@ export default function Home() {
                                                 <div className="font-medium">June 30, 2025</div>
                                             </div>
                                             <Button
-                                                className="w-full bg-gradient-to-r from-primary to-teal-600 hover:from-teal-600 hover:to-primary"
+                                                className="w-full transition-colors bg-linear-to-r from-primary to-teal-600 hover:from-teal-600 hover:to-primary"
                                                 asChild
                                             >
                                                 <a href="#contact">Claim Offer Now</a>
@@ -114,7 +118,7 @@ export default function Home() {
                             </div>
                         </div>
                     </div>
-                    <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white to-transparent z-10"></div>
+                    <div className="absolute bottom-0 left-0 right-0 h-16 bg-linear-to-t from-white to-transparent z-10"></div>
                 </section>
 
                 {/* Trusted By Section */}
@@ -131,7 +135,22 @@ export default function Home() {
                                     href="https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                                     width={120}
                                     height={40}
-                                    alt="Client logo"
+                                    className="h-8 w-auto object-contain bg-white/80 rounded px-2"
+                                />
+                            </div>
+                            <div className="grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100">
+                                <image
+                                    href="https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                    width={120}
+                                    height={40}
+                                    className="h-8 w-auto object-contain bg-white/80 rounded px-2"
+                                />
+                            </div>
+                            <div className="grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100">
+                                <image
+                                    href="https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                    width={120}
+                                    height={40}
                                     className="h-8 w-auto object-contain bg-white/80 rounded px-2"
                                 />
                             </div>
@@ -149,25 +168,6 @@ export default function Home() {
                                     href="https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                                     width={120}
                                     height={40}
-                                    alt="Client logo"
-                                    className="h-8 w-auto object-contain bg-white/80 rounded px-2"
-                                />
-                            </div>
-                            <div className="grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100">
-                                <image
-                                    href="https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                                    width={120}
-                                    height={40}
-                                    alt="Client logo"
-                                    className="h-8 w-auto object-contain bg-white/80 rounded px-2"
-                                />
-                            </div>
-                            <div className="grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100">
-                                <image
-                                    href="https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                                    width={120}
-                                    height={40}
-                                    alt="Client logo"
                                     className="h-8 w-auto object-contain bg-white/80 rounded px-2"
                                 />
                             </div>
@@ -195,12 +195,11 @@ export default function Home() {
 
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                             <div className="md:col-span-3 relative overflow-hidden rounded-2xl">
-                                <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-teal-600/90 z-10" />
+                                <div className="absolute inset-0 bg-linear-to-r from-primary/90 to-teal-600/90 z-10" />
                                 <image
                                     href="https://images.unsplash.com/photo-1632823469850-2f77dd9c7f93?q=80&w=2070&auto=format&fit=crop"
                                     width={1200}
                                     height={300}
-                                    alt="Roofing services"
                                     className="w-full h-48 md:h-64 object-cover"
                                 />
                                 <div className="absolute inset-0 z-20 flex items-center justify-center p-6 md:p-12">
@@ -215,7 +214,7 @@ export default function Home() {
                                         </p>
                                         <Button
                                             variant="outline"
-                                            className="border-white text-white hover:bg-white hover:text-primary"
+                                            className="border-white text-primary hover:bg-primary hover:text-white transition-colors"
                                             asChild
                                         >
                                             <a href="#contact">Learn About Our Materials</a>
@@ -228,42 +227,42 @@ export default function Home() {
                                 title="Waterproofing"
                                 description="Advanced membrane systems that create impenetrable barriers against moisture, protecting your property's foundation and structure."
                                 icon="droplet"
-                                imagehref="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=2070&auto=format&fit=crop"
+                                imageSrc="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=2070&auto=format&fit=crop"
                                 accentColor="from-blue-500 to-teal-500"
                             />
                             <ServiceCard
                                 title="Driveways"
                                 description="Durable, weather-resistant driveway installations with integrated drainage systems and premium waterproofing technology."
                                 icon="road"
-                                imagehref="https://images.unsplash.com/photo-1617720356637-6264c1c0b4bb?q=80&w=2069&auto=format&fit=crop"
+                                imageSrc="https://images.unsplash.com/photo-1617720356637-6264c1c0b4bb?q=80&w=2069&auto=format&fit=crop"
                                 accentColor="from-slate-500 to-gray-700"
                             />
                             <ServiceCard
                                 title="Roofing"
                                 description="Comprehensive roofing solutions using premium materials engineered to withstand Canterbury's diverse weather conditions."
                                 icon="home"
-                                imagehref="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop"
+                                imageSrc="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop"
                                 accentColor="from-primary to-teal-600"
                             />
                             <ServiceCard
                                 title="Flat Roofing"
                                 description="Specialized flat roof systems with advanced waterproofing membranes and proper drainage solutions for maximum durability."
                                 icon="square"
-                                imagehref="https://images.unsplash.com/photo-1605152276897-4f618f831968?q=80&w=2070&auto=format&fit=crop"
+                                imageSrc="https://images.unsplash.com/photo-1605152276897-4f618f831968?q=80&w=2070&auto=format&fit=crop"
                                 accentColor="from-teal-500 to-emerald-600"
                             />
                             <ServiceCard
                                 title="Repairs"
                                 description="Prompt, thorough repair services that address the root cause of leaks and damage to prevent future issues."
                                 icon="tool"
-                                imagehref="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=2069&auto=format&fit=crop"
+                                imageSrc="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=2069&auto=format&fit=crop"
                                 accentColor="from-amber-500 to-orange-600"
                             />
                             <ServiceCard
                                 title="Commercial Roofing"
                                 description="Heavy-duty commercial solutions designed for longevity, energy efficiency, and minimal maintenance requirements."
                                 icon="building"
-                                imagehref="https://images.unsplash.com/photo-1545259741-2ea3ebf92f67?q=80&w=2070&auto=format&fit=crop"
+                                imageSrc="https://images.unsplash.com/photo-1545259741-2ea3ebf92f67?q=80&w=2070&auto=format&fit=crop"
                                 accentColor="from-gray-700 to-slate-900"
                             />
                         </div>
@@ -271,7 +270,7 @@ export default function Home() {
                         <div className="flex justify-center pt-8">
                             <Button
                                 size="lg"
-                                className="bg-gradient-to-r from-primary to-teal-600 hover:from-teal-600 hover:to-primary group"
+                                className="bg-linear-to-r from-primary to-teal-600 transition-colors hover:from-teal-600 hover:to-primary group"
                                 asChild
                             >
                                 <a href="#contact" className="flex items-center gap-2">
@@ -284,11 +283,11 @@ export default function Home() {
                 </section>
 
                 {/* About Us / Why Choose Us */}
-                <section id="about" className="py-20 bg-gradient-to-b from-gray-50 to-white">
+                <section id="about" className="py-20 bg-linear-to-b from-gray-50 to-white">
                     <div className="container">
                         <div className="grid md:grid-cols-2 gap-12 items-center">
                             <div className="relative">
-                                <div className="absolute -inset-4 md:-inset-10 bg-gradient-to-r from-primary/20 to-teal-500/20 rounded-3xl blur-xl"></div>
+                                <div className="absolute -inset-4 md:-inset-10 bg-linear-to-r from-primary/20 to-teal-500/20 rounded-3xl blur-xl"></div>
                                 <div className="relative grid grid-cols-2 gap-4">
                                     <div className="space-y-4">
                                         <div className="rounded-2xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300">
@@ -392,7 +391,7 @@ export default function Home() {
                                 </div>
 
                                 <Button
-                                    className="bg-gradient-to-r from-primary to-teal-600 hover:from-teal-600 hover:to-primary group"
+                                    className="bg-linear-to-r from-primary to-teal-600 hover:from-teal-600 hover:to-primary group"
                                     asChild
                                 >
                                     <a href="#contact" className="flex items-center gap-2">
@@ -406,7 +405,7 @@ export default function Home() {
                 </section>
 
                 {/* Process Timeline */}
-                <section id="process" className="py-20 bg-gradient-to-b from-white to-gray-50">
+                <section id="process" className="py-20 bg-linear-to-b from-white to-gray-50">
                     <div className="container space-y-12">
                         <div className="text-center space-y-4 max-w-3xl mx-auto">
                             <div className="flex items-center justify-center gap-2 mb-4">
@@ -425,11 +424,11 @@ export default function Home() {
                 </section>
 
                 {/* Calculator Section */}
-                <section id="calculator" className="py-20 bg-gradient-to-r from-primary to-teal-600 text-white">
+                <section id="calculator" className="py-20 bg-linear-to-r from-primary to-teal-600 text-white">
                     <div className="container">
                         <div className="grid md:grid-cols-2 gap-12 items-center">
                             <div className="space-y-6">
-                                <div className="inline-block rounded-full bg-white/10 backdrop-blur-sm px-4 py-1 text-sm border border-white/20">
+                                <div className="inline-block rounded-full bg-white/10 backdrop-blur-xs px-4 py-1 text-sm border border-white/20">
                                     Exclusive Online Tool
                                 </div>
                                 <h2 className="text-3xl md:text-4xl font-bold">Estimate Your Roofing Project</h2>
@@ -438,13 +437,17 @@ export default function Home() {
                                     service needs. Get an instant ballpark figure before your detailed quote.
                                 </p>
                                 <div className="flex flex-col sm:flex-row gap-4">
-                                    <Button size="lg" className="bg-white text-primary hover:bg-white/90" asChild>
+                                    <Button
+                                        size="lg"
+                                        className="bg-primary text-white hover:bg-primary/80 border border-white"
+                                        asChild
+                                    >
                                         <a href="#contact">Get an Exact Quote</a>
                                     </Button>
                                     <Button
                                         size="lg"
                                         variant="outline"
-                                        className="border-white text-white hover:bg-white/20"
+                                        className="border-white text-primary hover:bg-white/80"
                                         asChild
                                     >
                                         <a href="#" target="_blank" rel="noopener noreferrer">
@@ -481,7 +484,7 @@ export default function Home() {
                                 author="Sarah Johnson"
                                 location="Merivale, Christchurch"
                                 rating={5}
-                                imagehref="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=2787&auto=format&fit=crop"
+                                imageSrc="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=2787&auto=format&fit=crop"
                                 projectType="Roof Replacement"
                             />
                             <TestimonialCard
@@ -489,7 +492,7 @@ export default function Home() {
                                 author="David Thompson"
                                 location="Rangiora, Canterbury"
                                 rating={5}
-                                imagehref="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=2787&auto=format&fit=crop"
+                                imageSrc="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=2787&auto=format&fit=crop"
                                 projectType="Basement Waterproofing"
                             />
                             <TestimonialCard
@@ -497,7 +500,7 @@ export default function Home() {
                                 author="Michael Chen"
                                 location="CBD, Christchurch"
                                 rating={5}
-                                imagehref="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2787&auto=format&fit=crop"
+                                imageSrc="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2787&auto=format&fit=crop"
                                 projectType="Commercial Roofing"
                             />
                         </div>
@@ -515,7 +518,7 @@ export default function Home() {
                 </section>
 
                 {/* Recent Projects */}
-                <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
+                <section className="py-20 bg-linear-to-b from-gray-50 to-white">
                     <div className="container space-y-12">
                         <div className="text-center space-y-4 max-w-3xl mx-auto">
                             <div className="flex items-center justify-center gap-2 mb-4">
@@ -532,10 +535,9 @@ export default function Home() {
 
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                             <div className="group relative overflow-hidden rounded-xl shadow-lg">
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent z-10 opacity-80 group-hover:opacity-100 transition-opacity"></div>
+                                <div className="absolute inset-0 bg-linear-to-t from-black/70 to-transparent z-10 opacity-80 group-hover:opacity-100 transition-opacity"></div>
                                 <image
                                     href="https://images.unsplash.com/photo-1591588582259-e675bd2e6088?q=80&w=2070&auto=format&fit=crop"
-                                    alt="Residential roof replacement in Cashmere"
                                     width={600}
                                     height={400}
                                     className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110"
@@ -565,10 +567,9 @@ export default function Home() {
                             </div>
 
                             <div className="group relative overflow-hidden rounded-xl shadow-lg">
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent z-10 opacity-80 group-hover:opacity-100 transition-opacity"></div>
+                                <div className="absolute inset-0 bg-linear-to-t from-black/70 to-transparent z-10 opacity-80 group-hover:opacity-100 transition-opacity"></div>
                                 <image
                                     href="https://images.unsplash.com/photo-1565636291277-cd0d6a92d451?q=80&w=2070&auto=format&fit=crop"
-                                    alt="Commercial waterproofing project"
                                     width={600}
                                     height={400}
                                     className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110"
@@ -598,10 +599,9 @@ export default function Home() {
                             </div>
 
                             <div className="group relative overflow-hidden rounded-xl shadow-lg">
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent z-10 opacity-80 group-hover:opacity-100 transition-opacity"></div>
+                                <div className="absolute inset-0 bg-linear-to-t from-black/70 to-transparent z-10 opacity-80 group-hover:opacity-100 transition-opacity"></div>
                                 <image
                                     href="https://images.unsplash.com/photo-1597047084897-51e81819a499?q=80&w=2069&auto=format&fit=crop"
-                                    alt="Driveway installation and waterproofing"
                                     width={600}
                                     height={400}
                                     className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110"
@@ -633,7 +633,7 @@ export default function Home() {
 
                         <div className="flex justify-center pt-8">
                             <Button
-                                className="bg-gradient-to-r from-primary to-teal-600 hover:from-teal-600 hover:to-primary"
+                                className="bg-linear-to-r from-primary to-teal-600 hover:from-teal-600 hover:to-primary"
                                 asChild
                             >
                                 <a href="#">View All Projects</a>
@@ -643,7 +643,7 @@ export default function Home() {
                 </section>
 
                 {/* CTA Banner */}
-                <section id="contact" className="py-20 bg-gradient-to-r from-primary to-teal-600 text-white">
+                <section id="contact" className="py-20 bg-linear-to-r from-primary to-teal-600 text-white">
                     <div className="container">
                         <div className="grid md:grid-cols-2 gap-12 items-center">
                             <div className="space-y-6">
@@ -655,7 +655,7 @@ export default function Home() {
                                     here to help. Contact us for a no-obligation quote.
                                 </p>
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                    <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
+                                    <div className="bg-white/10 backdrop-blur-xs rounded-xl p-4 border border-white/20">
                                         <div className="flex items-center gap-3 mb-2">
                                             <div className="bg-white/20 rounded-full p-2">
                                                 <Phone className="h-5 w-5" />
@@ -666,7 +666,7 @@ export default function Home() {
                                             03 355 5555
                                         </a>
                                     </div>
-                                    <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
+                                    <div className="bg-white/10 backdrop-blur-xs rounded-xl p-4 border border-white/20">
                                         <div className="flex items-center gap-3 mb-2">
                                             <div className="bg-white/20 rounded-full p-2">
                                                 <Mail className="h-5 w-5" />
@@ -680,7 +680,7 @@ export default function Home() {
                                             info@canterburyroofing.co.nz
                                         </a>
                                     </div>
-                                    <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
+                                    <div className="bg-white/10 backdrop-blur-xs rounded-xl p-4 border border-white/20">
                                         <div className="flex items-center gap-3 mb-2">
                                             <div className="bg-white/20 rounded-full p-2">
                                                 <MapPin className="h-5 w-5" />
@@ -689,7 +689,7 @@ export default function Home() {
                                         </div>
                                         <address className="not-italic">123 Main Street, Christchurch</address>
                                     </div>
-                                    <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
+                                    <div className="bg-white/10 backdrop-blur-xs rounded-xl p-4 border border-white/20">
                                         <div className="flex items-center gap-3 mb-2">
                                             <div className="bg-white/20 rounded-full p-2">
                                                 <Clock className="h-5 w-5" />
@@ -728,7 +728,7 @@ export default function Home() {
                         <div className="relative h-[400px] rounded-xl overflow-hidden shadow-lg border">
                             <div className="absolute inset-0 bg-gray-200 flex items-center justify-center">
                                 <p className="text-muted-foreground">
-                                    Interactive map of Canterbury service area would be displayed here
+                                    Interactive map of service area would be displayed here
                                 </p>
                             </div>
                         </div>
@@ -764,7 +764,7 @@ export default function Home() {
                                     <AnimatedRoof isWhite={true} />
                                 </div>
                                 <div>
-                                    <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-teal-300">
+                                    <span className="text-xl font-bold bg-clip-text text-transparent bg-linear-to-r from-white to-teal-300">
                                         Canterbury Roofing
                                     </span>
                                     <p className="text-xs text-gray-400">Christchurch's Premier Roofing Specialists</p>

@@ -1,36 +1,34 @@
-"use client"
-
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Label } from "@/components/ui/label"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Slider } from "@/components/ui/slider"
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Label } from "@/components/ui/label";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Slider } from "@/components/ui/slider";
 
 export default function RoofingCalculator() {
-  const [roofSize, setRoofSize] = useState<number>(100)
-  const [roofType, setRoofType] = useState<string>("standard")
-  const [serviceType, setServiceType] = useState<string>("repair")
-  const [showResult, setShowResult] = useState<boolean>(false)
+  const [roofSize, setRoofSize] = useState<number>(100);
+  const [roofType, setRoofType] = useState<string>("standard");
+  const [serviceType, setServiceType] = useState<string>("repair");
+  const [showResult, setShowResult] = useState<boolean>(false);
 
   const calculateEstimate = () => {
-    setShowResult(true)
-  }
+    setShowResult(true);
+  };
 
   // Calculate base price based on inputs
   const getBasePrice = () => {
-    const sizeFactor = roofSize / 10
+    const sizeFactor = roofSize / 10;
 
-    let typeMultiplier = 1
-    if (roofType === "premium") typeMultiplier = 1.5
-    if (roofType === "luxury") typeMultiplier = 2.2
+    let typeMultiplier = 1;
+    if (roofType === "premium") typeMultiplier = 1.5;
+    if (roofType === "luxury") typeMultiplier = 2.2;
 
-    let serviceMultiplier = 1
-    if (serviceType === "replacement") serviceMultiplier = 3
-    if (serviceType === "new") serviceMultiplier = 3.5
-    if (serviceType === "waterproofing") serviceMultiplier = 1.8
+    let serviceMultiplier = 1;
+    if (serviceType === "replacement") serviceMultiplier = 3;
+    if (serviceType === "new") serviceMultiplier = 3.5;
+    if (serviceType === "waterproofing") serviceMultiplier = 1.8;
 
-    return Math.round(sizeFactor * typeMultiplier * serviceMultiplier * 100)
-  }
+    return Math.round(sizeFactor * typeMultiplier * serviceMultiplier * 100);
+  };
 
   return (
     <div className="space-y-6">
@@ -86,7 +84,7 @@ export default function RoofingCalculator() {
 
         <Button
           onClick={calculateEstimate}
-          className="w-full bg-gradient-to-r from-primary to-teal-600 hover:from-teal-600 hover:to-primary"
+          className="w-full transition-colors bg-linear-to-r from-primary to-teal-600 hover:from-teal-600 hover:to-primary"
         >
           Calculate Estimate
         </Button>
@@ -111,7 +109,12 @@ export default function RoofingCalculator() {
                   viewBox="0 0 24 24"
                   stroke="currentColor"
                 >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M5 13l4 4L19 7"
+                  />
                 </svg>
                 <span>Materials and labor</span>
               </li>
@@ -122,7 +125,12 @@ export default function RoofingCalculator() {
                   viewBox="0 0 24 24"
                   stroke="currentColor"
                 >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M5 13l4 4L19 7"
+                  />
                 </svg>
                 <span>Site preparation and cleanup</span>
               </li>
@@ -133,7 +141,12 @@ export default function RoofingCalculator() {
                   viewBox="0 0 24 24"
                   stroke="currentColor"
                 >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M5 13l4 4L19 7"
+                  />
                 </svg>
                 <span>Standard warranty</span>
               </li>
@@ -142,5 +155,5 @@ export default function RoofingCalculator() {
         </div>
       )}
     </div>
-  )
+  );
 }

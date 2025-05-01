@@ -1,8 +1,21 @@
 ---
 import Showcase from "@/showcases/matheus-fraga/index";
-import "@/main.css";
+import "./style.css";
 ---
 
-<div>
-    <Showcase />
-</div>
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="shortcut icon" href={"/favicon.ico"} />
+        <link rel="mask-icon" href={"/favicon.svg"} />
+        <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" } />
+        <meta name="generator" content={Astro.generator} />
+        <title>Showcase</title>
+    </head>
+    <body>
+        <Showcase />
+    </body>
+</html>

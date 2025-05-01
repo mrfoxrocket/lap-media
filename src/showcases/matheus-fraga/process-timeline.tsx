@@ -1,4 +1,4 @@
-import { CheckCircle } from "lucide-react"
+import { CheckCircle } from "lucide-react";
 
 export default function ProcessTimeline() {
   const steps = [
@@ -10,12 +10,14 @@ export default function ProcessTimeline() {
     {
       number: 2,
       title: "Detailed Proposal",
-      description: "You'll receive a comprehensive quote with material options, timeline, and transparent pricing.",
+      description:
+        "You'll receive a comprehensive quote with material options, timeline, and transparent pricing.",
     },
     {
       number: 3,
       title: "Project Planning",
-      description: "Once approved, we schedule your project and order premium materials specifically for your job.",
+      description:
+        "Once approved, we schedule your project and order premium materials specifically for your job.",
     },
     {
       number: 4,
@@ -25,19 +27,20 @@ export default function ProcessTimeline() {
     {
       number: 5,
       title: "Quality Inspection",
-      description: "We conduct a thorough inspection and walkthrough to ensure everything meets our high standards.",
+      description:
+        "We conduct a thorough inspection and walkthrough to ensure everything meets our high standards.",
     },
     {
       number: 6,
       title: "Ongoing Support",
       description: "Your 10-year warranty is backed by our commitment to service and maintenance.",
     },
-  ]
+  ];
 
   return (
     <div className="relative">
       {/* Vertical line */}
-      <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary to-teal-500 transform -translate-x-1/2 hidden md:block"></div>
+      <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-linear-to-b from-primary to-teal-500 transform -translate-x-1/2 hidden md:block"></div>
 
       <div className="space-y-12 relative">
         {steps.map((step, index) => (
@@ -48,25 +51,27 @@ export default function ProcessTimeline() {
             {/* Timeline node */}
             <div className="absolute left-4 md:left-1/2 transform -translate-x-1/2 flex items-center justify-center">
               <div className="relative">
-                <div className="absolute -inset-3 rounded-full bg-primary/20 blur-sm"></div>
-                <div className="relative h-8 w-8 rounded-full bg-gradient-to-r from-primary to-teal-500 flex items-center justify-center text-white font-bold">
+                <div className="absolute -inset-3 rounded-full bg-primary/20 blur-xs"></div>
+                <div className="relative h-8 w-8 rounded-full bg-linear-to-r from-primary to-teal-500 flex items-center justify-center text-white font-bold">
                   {step.number}
                 </div>
               </div>
             </div>
 
             {/* Content */}
-            <div className={`pl-16 md:pl-0 md:w-1/2 ${index % 2 === 0 ? "md:pr-12 md:text-right" : "md:pl-12"}`}>
+            <div
+              className={`pl-16 md:pl-0 md:w-1/2 ${index % 2 === 0 ? "md:pr-12 md:text-right" : "md:pl-12"}`}
+            >
               <div className="bg-white rounded-xl p-6 shadow-md border border-gray-100 hover:shadow-lg transition-shadow">
                 <h3 className="text-xl font-bold mb-2 flex md:block items-center gap-2">
                   {index % 2 === 0 ? (
                     <>
                       {step.title}
-                      <CheckCircle className="h-5 w-5 text-primary inline ml-2 hidden md:inline" />
+                      <CheckCircle className="h-5 w-5 text-primary ml-2 hidden md:inline" />
                     </>
                   ) : (
                     <>
-                      <CheckCircle className="h-5 w-5 text-primary inline mr-2 hidden md:inline" />
+                      <CheckCircle className="h-5 w-5 text-primary  mr-2 hidden md:inline" />
                       {step.title}
                     </>
                   )}
@@ -81,5 +86,5 @@ export default function ProcessTimeline() {
         ))}
       </div>
     </div>
-  )
+  );
 }

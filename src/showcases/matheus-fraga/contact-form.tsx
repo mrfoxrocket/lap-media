@@ -93,7 +93,7 @@ export default function ContactForm() {
       </div>
       <Button
         type="submit"
-        className="w-full bg-gradient-to-r from-primary to-teal-600 hover:from-teal-600 hover:to-primary group"
+        className="w-full bg-linear-to-r from-primary to-teal-600 hover:from-teal-600 hover:to-primary group"
         disabled={isSubmitting}
       >
         <span className="flex items-center gap-2">
