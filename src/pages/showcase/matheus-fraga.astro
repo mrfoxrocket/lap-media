@@ -1,5 +1,4 @@
 ---
-import Showcase from "@/showcases/matheus-fraga/index";
 import "./style.css";
 import SiteHeader from "@/showcases/matheus-fraga/site-header";
 import { Mail, Phone, MapPin, Facebook, Instagram, Clock, CheckCircle, ArrowRight, Droplet } from "lucide-react";
@@ -10,9 +9,9 @@ import AnimatedRoof from "@/showcases/matheus-fraga/animated-roof";
 import ContactForm from "@/showcases/matheus-fraga/contact-form";
 import ProcessTimeline from "@/showcases/matheus-fraga/process-timeline";
 import RoofingCalculator from "@/showcases/matheus-fraga/roofing-calculator";
-import ServiceCard from "@/showcases/matheus-fraga/service-card";
-import TestimonialCard from "@/showcases/matheus-fraga/testimonial-card";
-import { InfiniteMovingCardsDemo } from "@/showcases/matheus-fraga/infinite-testimonial";
+import ServiceCard from "@/showcases/matheus-fraga/service-card.astro";
+import TestimonialCard from "@/showcases/matheus-fraga/testimonial-card.astro";
+import { Image } from "astro:assets";
 ---
 
 <!doctype html>
@@ -20,12 +19,14 @@ import { InfiniteMovingCardsDemo } from "@/showcases/matheus-fraga/infinite-test
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width" />
+
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="shortcut icon" href={"/favicon.ico"} />
         <link rel="mask-icon" href={"/favicon.svg"} />
         <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" } />
         <meta name="generator" content={Astro.generator} />
         <title>Showcase</title>
+        <meta name="description" content="Showcase for free homepage design" />
     </head>
     <body>
         <div class="flex min-h-screen flex-col transition-colors bg-linear-to-b from-white to-gray-50">
@@ -167,7 +168,8 @@ import { InfiniteMovingCardsDemo } from "@/showcases/matheus-fraga/infinite-test
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                             <div class="md:col-span-3 relative overflow-hidden rounded-2xl">
                                 <div class="absolute inset-0 bg-linear-to-r from-primary/90 to-teal-600/90 z-10"></div>
-                                <img
+                                <Image
+                                    alt={"alt"}
                                     src="https://images.unsplash.com/photo-1650439718569-301b4bcb45f0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHdlYXRoZXJwcm9vZmluZ3xlbnwwfHwwfHx8Mg%3D%3D"
                                     width={1200}
                                     height={300}
@@ -265,7 +267,7 @@ import { InfiniteMovingCardsDemo } from "@/showcases/matheus-fraga/infinite-test
                                         <div
                                             class="rounded-2xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300"
                                         >
-                                            <img
+                                            <Image
                                                 src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=2070&auto=format&fit=crop"
                                                 width={250}
                                                 height={300}
@@ -276,7 +278,7 @@ import { InfiniteMovingCardsDemo } from "@/showcases/matheus-fraga/infinite-test
                                         <div
                                             class="rounded-2xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300"
                                         >
-                                            <img
+                                            <Image
                                                 src="https://images.unsplash.com/photo-1571478288039-27318549a79c?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                                                 width={250}
                                                 height={200}
@@ -289,7 +291,7 @@ import { InfiniteMovingCardsDemo } from "@/showcases/matheus-fraga/infinite-test
                                         <div
                                             class="rounded-2xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300"
                                         >
-                                            <img
+                                            <Image
                                                 src="https://images.unsplash.com/photo-1602064828974-fcac67d33f4e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bWV0YWwlMjByb29mfGVufDB8fDB8fHwy"
                                                 width={250}
                                                 height={200}
@@ -300,7 +302,7 @@ import { InfiniteMovingCardsDemo } from "@/showcases/matheus-fraga/infinite-test
                                         <div
                                             class="rounded-2xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300"
                                         >
-                                            <img
+                                            <Image
                                                 src="https://images.unsplash.com/photo-1646505256959-db71754a5790?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y29uc3RydWN0aW9uJTIwdGVhbSUyMHBob3RvfGVufDB8fDB8fHwy"
                                                 width={250}
                                                 height={300}
@@ -525,7 +527,8 @@ import { InfiniteMovingCardsDemo } from "@/showcases/matheus-fraga/infinite-test
                                     class="absolute inset-0 bg-linear-to-t from-black/70 to-transparent z-10 opacity-80 group-hover:opacity-100 transition-opacity"
                                 >
                                 </div>
-                                <img
+                                <Image
+                                    alt={"alt"}
                                     src="https://images.unsplash.com/photo-1602193230480-7840a38eb0c3?q=80&w=1738&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                                     width={600}
                                     height={400}
@@ -565,7 +568,8 @@ import { InfiniteMovingCardsDemo } from "@/showcases/matheus-fraga/infinite-test
                                     class="absolute inset-0 bg-linear-to-t from-black/70 to-transparent z-10 opacity-80 group-hover:opacity-100 transition-opacity"
                                 >
                                 </div>
-                                <img
+                                <Image
+                                    alt={"alt"}
                                     src="https://images.unsplash.com/photo-1558362379-716564bdb0ae?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Y29tbWVyaWNhbCUyMGJ1aWxkaW5nfGVufDB8fDB8fHwy"
                                     width={600}
                                     height={400}
@@ -605,7 +609,8 @@ import { InfiniteMovingCardsDemo } from "@/showcases/matheus-fraga/infinite-test
                                     class="absolute inset-0 bg-linear-to-t from-black/70 to-transparent z-10 opacity-80 group-hover:opacity-100 transition-opacity"
                                 >
                                 </div>
-                                <img
+                                <Image
+                                    alt={"alt"}
                                     src="https://images.unsplash.com/photo-1692133188474-8c5591e6a6a8?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                                     width={600}
                                     height={400}
@@ -683,7 +688,7 @@ import { InfiniteMovingCardsDemo } from "@/showcases/matheus-fraga/infinite-test
                                             <h3 class="font-medium">Email Us</h3>
                                         </div>
                                         <a
-                                            src="mailto:info@canterburyroofing.co.nz"
+                                            href="mailto:info@canterburyroofing.co.nz"
                                             class="text-lg font-medium hover:underline"
                                         >
                                             info@canterburyroofing.co.nz

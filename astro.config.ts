@@ -13,12 +13,20 @@ export default defineConfig({
     vite: {
         plugins: [tailwindcss()],
     },
+    image: {
+        domains: ["astro.build, unsplash.com"],
+        remotePatterns: [{ protocol: "https" }],
+    },
 
-    integrations: [icon({
-        iconDir: "src/assets",
-        include: {
-            tabler: ["*"],
-            lucide: ["*"],
-        },
-    }), react(), partytown()],
+    integrations: [
+        icon({
+            iconDir: "src/assets",
+            include: {
+                tabler: ["*"],
+                lucide: ["*"],
+            },
+        }),
+        react(),
+        partytown(),
+    ],
 });
