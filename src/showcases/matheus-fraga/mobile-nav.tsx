@@ -57,7 +57,7 @@ export default function MobileNav({ items }: MobileNavProps) {
             <div
                 className={cn(
                     "fixed top-0 right-0 z-50 min-h-dvh h-full w-full md:w-3/4 max-w-sm bg-white shadow-xl transition-transform duration-300 ease-in-out",
-                    isOpen ? "translate-x-0" : "translate-x-full"
+                    isOpen ? "translate-x-0 " : "translate-x-full"
                 )}
             >
                 <div className="flex flex-col h-full">
