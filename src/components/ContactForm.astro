@@ -1,0 +1,48 @@
+---
+import { Button } from "@/components/starwind/button";
+---
+
+<div class="bg-background p-6 rounded-lg shadow-lg">
+    <h2 class="text-2xl font-bold text-foreground mb-4">Request a Free Quote</h2>
+    <form class="space-y-4">
+        <div>
+            <label for="name" class="block text-sm font-medium text-muted-foreground mb-1"> Full Name </label>
+            <input
+                type="text"
+                id="name"
+                class="w-full px-3 py-2 border border-muted rounded-md"
+                placeholder="John Smith"
+            />
+        </div>
+        <div>
+            <label for="phone" class="block text-sm font-medium text-muted-foreground mb-1"> Phone Number </label>
+            <input
+                type="tel"
+                id="phone"
+                class="w-full px-3 py-2 border border-muted rounded-md"
+                placeholder="(555) 123-4567"
+            />
+        </div>
+        <div>
+            <label for="email" class="block text-sm font-medium text-muted-foreground mb-1"> Email Address </label>
+            <input
+                type="email"
+                id="email"
+                class="w-full px-3 py-2 border border-muted rounded-md"
+                placeholder="john@example.com"
+            />
+        </div>
+        <div>
+            <label for="service" class="block text-sm font-medium text-muted-foreground mb-1"> Service Needed </label>
+            <select id="service" class="w-full px-3 py-2 border border-muted rounded-md">
+                <option value="">Select a service</option>
+                <option value="roof-replacement">Roof Replacement</option>
+                <option value="roof-repair">Roof Repair</option>
+                <option value="inspection">Roof Inspection</option>
+                <option value="maintenance">Maintenance</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+        <Button class="w-full bg-primary hover:bg-primary/90 text-white font-bold text-lg"> Submit Request </Button>
+    </form>
+</div>

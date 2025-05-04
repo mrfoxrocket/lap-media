@@ -1,0 +1,85 @@
+---
+import "./showcase.css";
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <script is:inline>
+            "use strict";
+
+            // "system" | "dark" | "light"
+            const theme = "dark";
+
+            const themeToggle = () => {
+                (() => {
+                    const storageKey = "theme-toggle";
+
+                    function getSystemTheme() {
+                        return theme === "system"
+                            ? window.matchMedia("(prefers-color-scheme: dark)").matches
+                                ? "dark"
+                                : "light"
+                            : theme;
+                    }
+
+                    function getUserTheme() {
+                        const theme = localStorage.getItem(storageKey);
+                        return theme === "dark" || theme === "light" ? theme : null;
+                    }
+
+                    function getTheme() {
+                        return getUserTheme() || getSystemTheme();
+                    }
+
+                    function setUserTheme(theme) {
+                        if (theme === getSystemTheme()) {
+                            localStorage.removeItem(storageKey);
+                        } else {
+                            localStorage.setItem(storageKey, theme);
+                        }
+                    }
+
+                    function setStyle(theme) {
+                        const root = document.documentElement;
+                        root.classList.toggle("dark", theme === "dark");
+                        root.style.colorScheme = theme;
+                    }
+
+                    function setTheme(theme) {
+                        setUserTheme(theme);
+                        setStyle(theme);
+                    }
+
+                    setTheme(getTheme());
+
+                    window.astroThemeToggle = { setTheme, getTheme };
+                })();
+            };
+            themeToggle();
+
+            document.addEventListener("astro:after-swap", () => {
+                themeToggle();
+            });
+        </script>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="generator" content={Astro.generator} />
+        <title>Astro Basics</title>
+    </head>
+    <body>
+        <main class="w-full min-h-dvh flex flex-col">
+            <slot />
+        </main>
+    </body>
+</html>
+
+<style>
+    html,
+    body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+    }
+</style>

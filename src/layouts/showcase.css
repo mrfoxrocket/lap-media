@@ -1,0 +1,80 @@
+@import "tailwindcss";
+@custom-variant dark (&: is(.dark *));
+
+/* BASE STYLES */
+@layer base {
+	* {
+		@apply border-muted outline-muted/50;
+	}
+	body {
+		@apply bg-background text-foreground;
+	}
+}
+
+/* COLORS */
+:root {
+	--background: oklch(1 0 0);
+	--foreground: oklch(0.145 0 0);
+
+	--muted: oklch(0.97 0 0);
+	--muted-foreground: oklch(0.556 0 0);
+
+	--destructive: oklch(0.577 0.245 27.325);
+	--radius: 0.625rem;
+}
+
+.dark {
+	--background: oklch(0.145 0 0);
+	--foreground: oklch(0.985 0 0);
+
+	--muted: oklch(0.269 0 0);
+	--muted-foreground: oklch(0.708 0 0);
+
+	--destructive: oklch(0.396 0.141 25.723);
+}
+
+@theme inline {
+	--color-background: var(--background);
+	--color-foreground: var(--foreground);
+	--color-muted: var(--muted);
+	--color-muted-foreground: var(--muted-foreground);
+	--color-destructive: var(--destructive);
+	--radius-sm: calc(var(--radius) - 4px);
+	--radius-md: calc(var(--radius) - 2px);
+	--radius-lg: var(--radius);
+	--radius-xl: calc(var(--radius) + 4px);
+}
+
+@theme {
+	--animate-accordion-down: accordion-down 0.2s ease-out;
+	--animate-accordion-up: accordion-up 0.2s ease-out;
+
+	@keyframes accordion-down {
+		from {
+			height: 0;
+		}
+		to {
+			height: var(--starwind-accordion-content-height);
+		}
+	}
+
+	@keyframes accordion-up {
+		from {
+			height: var(--starwind-accordion-content-height);
+		}
+		to {
+			height: 0;
+		}
+	}
+}
+
+@layer utilities {
+	/* transition-colors but without outline-color transition property */
+	.starwind-transition-colors {
+		transition-property: color, background-color, border-color,
+			text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via,
+			--tw-gradient-to;
+		transition-timing-function: var(--default-transition-timing-function);
+		transition-duration: var(--default-transition-duration);
+	}
+}

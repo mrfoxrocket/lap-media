@@ -3,6 +3,11 @@ import "./style.css";
 import SiteHeader from "@/showcases/matheus-fraga/site-header";
 import { Mail, Phone, MapPin, Facebook, Instagram, Clock, CheckCircle, ArrowRight, Droplet } from "lucide-react";
 
+import accolade1 from "@/assets/accolades/1.png";
+import accolade2 from "@/assets/accolades/2.png";
+import accolade3 from "@/assets/accolades/lbp.png";
+import accolade4 from "@/assets/accolades/sitesafe.png";
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import AnimatedRoof from "@/showcases/matheus-fraga/animated-roof";
@@ -12,9 +17,29 @@ import RoofingCalculator from "@/showcases/matheus-fraga/roofing-calculator";
 import ServiceCard from "@/showcases/matheus-fraga/service-card.astro";
 import TestimonialCard from "@/showcases/matheus-fraga/testimonial-card.astro";
 import { Image } from "astro:assets";
+
+import { faqs } from "@/showcases/matheus-fraga/data";
 ---
 
-<!doctype html>
+<script>
+    const faqButtons = document.querySelectorAll(".faq-button");
+
+    faqButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+            const faqItem = button.parentElement;
+            const answer = faqItem?.querySelector(".faq-answer");
+
+            // Close other open answers
+            document.querySelectorAll(".faq-answer").forEach((el) => {
+                if (el !== answer) el.classList.add("hidden");
+            });
+
+            // Toggle current answer
+            answer?.classList.toggle("hidden");
+        });
+    });
+</script>
+
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
@@ -31,6 +56,7 @@ import { Image } from "astro:assets";
     <body>
         <div class="flex min-h-screen flex-col transition-colors bg-linear-to-b from-white to-gray-50">
             <SiteHeader client:load />
+
             <main class="flex-1">
                 {/* Hero Section */}
                 <section class="relative overflow-hidden">
@@ -147,107 +173,69 @@ import { Image } from "astro:assets";
                     </div>
                 </section>
 
-                {/* Services Section */}
-                <section id="services" class="py-20">
+                <!--ACCOLADES-->
+                <section class="flex flex-wrap w-full justify-evenly p-4 transition-colors">
+                    {
+                        [accolade1, accolade2, accolade3, accolade4].map((item) => (
+                            <div class="flex  items-center justify-center p-4 rounded-lg hover:border-primary/50 transition-colors">
+                                <Image
+                                    src={item ?? `/placeholder.svg?height=60&width=80&text=Logo`}
+                                    alt={`Accolade Logo ${item}`}
+                                    class="max-h-20 max-w-60 w-auto bg-black p-2 rounded-md"
+                                />
+                            </div>
+                        ))
+                    }
+                </section>
+
+                {/* Testimonials */}
+                <section id="testimonials" class="py-20">
                     <div class="container space-y-12">
                         <div class="text-center space-y-4 max-w-3xl mx-auto">
                             <div class="flex items-center justify-center gap-2 mb-4">
                                 <div class="h-px w-8 bg-primary"></div>
-                                <span class="text-sm font-medium text-primary">Our Expertise</span>
+                                <span class="text-sm font-medium text-primary">Testimonials</span>
                                 <div class="h-px w-8 bg-primary"></div>
                             </div>
-                            <h2 class="text-3xl md:text-4xl font-bold">
-                                Comprehensive Roofing & Waterproofing Solutions
-                            </h2>
+                            <h2 class="text-3xl md:text-4xl font-bold">What Our Clients Say</h2>
                             <p class="text-muted-foreground text-lg">
-                                From residential repairs to commercial installations, we provide tailored solutions for
-                                Canterbury's unique climate
+                                Don't just take our word for it - hear from satisfied clients across the region
                             </p>
                         </div>
 
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                            <div class="md:col-span-3 relative overflow-hidden rounded-2xl">
-                                <div class="absolute inset-0 bg-linear-to-r from-primary/90 to-teal-600/90 z-10"></div>
-                                <Image
-                                    alt={"alt"}
-                                    src="https://images.unsplash.com/photo-1650439718569-301b4bcb45f0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHdlYXRoZXJwcm9vZmluZ3xlbnwwfHwwfHx8Mg%3D%3D"
-                                    width={1200}
-                                    height={300}
-                                    class="w-full h-48 md:h-64 object-cover"
-                                />
-                                <div class="absolute inset-0 z-20 flex items-center justify-center p-6 md:p-12">
-                                    <div class="text-center text-white space-y-4 max-w-2xl">
-                                        <h3 class="text-2xl md:text-3xl font-bold">
-                                            Canterbury Weather-Ready Solutions
-                                        </h3>
-                                        <p class="text-white/80">
-                                            Our roofing and waterproofing systems are specifically engineered to
-                                            withstand Canterbury's unique weather patterns, from frosty winters to hot,
-                                            dry summers and everything in between.
-                                        </p>
-                                        <Button
-                                            variant="outline"
-                                            className="border-white text-primary hover:bg-primary hover:text-white transition-colors"
-                                        >
-                                            <a href="#contact">Learn About Our Materials</a>
-                                        </Button>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <ServiceCard
-                                title="Waterproofing"
-                                description="Advanced membrane systems that create impenetrable barriers against moisture, protecting your property's foundation and structure."
-                                icon="droplet"
-                                imageSrc="https://images.unsplash.com/photo-1655728664483-1e3b0778e1a5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8d2F0ZXJwcm9vZnxlbnwwfHwwfHx8Mg%3D%3D"
-                                accentColor="from-blue-500 to-teal-500"
+                            <TestimonialCard
+                                quote="After the 2011 earthquake damaged our roof, we tried several companies for repairs. Canterbury Roofing was the only one that provided a permanent solution. 10 years later and still no leaks!"
+                                author="Sarah Johnson"
+                                location="Merivale, Christchurch"
+                                rating={5}
+                                imageSrc="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=2787&auto=format&fit=crop"
+                                projectType="Roof Replacement"
                             />
-                            <ServiceCard
-                                title="Driveways"
-                                description="Durable, weather-resistant driveway installations with integrated drainage systems and premium waterproofing technology."
-                                icon="road"
-                                imageSrc="https://images.unsplash.com/photo-1692133188474-8c5591e6a6a8?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                                accentColor="from-slate-500 to-gray-700"
+                            <TestimonialCard
+                                quote="The team waterproofed our basement that had been leaking for years. Even through the wettest winter in recent memory, it's remained completely dry. Their attention to detail was impressive."
+                                author="David Thompson"
+                                location="Rangiora, Canterbury"
+                                rating={5}
+                                imageSrc="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=2787&auto=format&fit=crop"
+                                projectType="Basement Waterproofing"
                             />
-                            <!-- <ServiceCard -->
-                            <!--     title="Roofing" -->
-                            <!--     description="Comprehensive roofing solutions using premium materials engineered to withstand Canterbury's diverse weather conditions." -->
-                            <!--     icon="home" -->
-                            <!--     imageSrc="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop" -->
-                            <!--     accentColor="from-primary to-teal-600" -->
-                            <!-- /> -->
-                            <ServiceCard
-                                title="Flat Roofing"
-                                description="Specialized flat roof systems with advanced waterproofing membranes and proper drainage solutions for maximum durability."
-                                icon="square"
-                                imageSrc="https://images.unsplash.com/photo-1602193230480-7840a38eb0c3?q=80&w=1738&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                                accentColor="from-teal-500 to-emerald-600"
-                            />
-                            <ServiceCard
-                                title="Repairs"
-                                description="Prompt, thorough repair services that address the root cause of leaks and damage to prevent future issues."
-                                icon="tool"
-                                imageSrc="https://images.unsplash.com/photo-1633759593085-1eaeb724fc88?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cm9vZiUyMHJlcGFpcnxlbnwwfHwwfHx8Mg%3D%3D"
-                                accentColor="from-amber-500 to-orange-600"
-                            />
-                            <ServiceCard
-                                title="Commercial"
-                                description="Heavy-duty commercial solutions designed for longevity, energy efficiency, and minimal maintenance requirements."
-                                icon="building"
-                                imageSrc="https://images.unsplash.com/photo-1580741753044-b3f303ad361b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8Y29tbWVyY2lhbCUyMGJ1aWxkaW5nfGVufDB8fDB8fHwy"
-                                accentColor="from-gray-700 to-slate-900"
+                            <TestimonialCard
+                                quote="As a commercial property manager, I've worked with many roofing companies. These guys are by far the most reliable and provide the best value for money. They're now our exclusive roofing partner."
+                                author="Michael Chen"
+                                location="CBD, Christchurch"
+                                rating={5}
+                                imageSrc="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2787&auto=format&fit=crop"
+                                projectType="Commercial Roofing"
                             />
                         </div>
 
                         <div class="flex justify-center pt-8">
                             <Button
-                                size="lg"
-                                className="bg-linear-to-r from-primary to-teal-600 transition-colors hover:from-teal-600 hover:to-primary group"
+                                variant="outline"
+                                className="border-primary text-primary hover:bg-primary hover:text-white"
                             >
-                                <a href="#contact" class="flex items-center gap-2">
-                                    Request a Service Quote
-                                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                                </a>
+                                <a href="#">Read More Success Stories</a>
                             </Button>
                         </div>
                     </div>
@@ -395,6 +383,112 @@ import { Image } from "astro:assets";
                     </div>
                 </section>
 
+                {/* Services Section */}
+                <section id="services" class="py-20">
+                    <div class="container space-y-12">
+                        <div class="text-center space-y-4 max-w-3xl mx-auto">
+                            <div class="flex items-center justify-center gap-2 mb-4">
+                                <div class="h-px w-8 bg-primary"></div>
+                                <span class="text-sm font-medium text-primary">Our Expertise</span>
+                                <div class="h-px w-8 bg-primary"></div>
+                            </div>
+                            <h2 class="text-3xl md:text-4xl font-bold">
+                                Comprehensive Roofing & Waterproofing Solutions
+                            </h2>
+                            <p class="text-muted-foreground text-lg">
+                                From residential repairs to commercial installations, we provide tailored solutions for
+                                Canterbury's unique climate
+                            </p>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                            <div class="md:col-span-3 relative overflow-hidden rounded-2xl">
+                                <div class="absolute inset-0 bg-linear-to-r from-primary/90 to-teal-600/90 z-10"></div>
+                                <Image
+                                    alt={"alt"}
+                                    src="https://images.unsplash.com/photo-1650439718569-301b4bcb45f0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHdlYXRoZXJwcm9vZmluZ3xlbnwwfHwwfHx8Mg%3D%3D"
+                                    width={1200}
+                                    height={300}
+                                    class="w-full h-48 md:h-64 object-cover"
+                                />
+                                <div class="absolute inset-0 z-20 flex items-center justify-center p-6 md:p-12">
+                                    <div class="text-center text-white space-y-4 max-w-2xl">
+                                        <h3 class="text-2xl md:text-3xl font-bold">
+                                            Canterbury Weather-Ready Solutions
+                                        </h3>
+                                        <p class="text-white/80">
+                                            Our roofing and waterproofing systems are specifically engineered to
+                                            withstand Canterbury's unique weather patterns, from frosty winters to hot,
+                                            dry summers and everything in between.
+                                        </p>
+                                        <Button
+                                            variant="outline"
+                                            className="border-white text-primary hover:bg-primary hover:text-white transition-colors"
+                                        >
+                                            <a href="#contact">Learn About Our Materials</a>
+                                        </Button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <ServiceCard
+                                title="Waterproofing"
+                                description="Advanced membrane systems that create impenetrable barriers against moisture, protecting your property's foundation and structure."
+                                icon="droplet"
+                                imageSrc="https://images.unsplash.com/photo-1655728664483-1e3b0778e1a5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8d2F0ZXJwcm9vZnxlbnwwfHwwfHx8Mg%3D%3D"
+                                accentColor="from-blue-500 to-teal-500"
+                            />
+                            <ServiceCard
+                                title="Driveways"
+                                description="Durable, weather-resistant driveway installations with integrated drainage systems and premium waterproofing technology."
+                                icon="road"
+                                imageSrc="https://images.unsplash.com/photo-1692133188474-8c5591e6a6a8?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                accentColor="from-slate-500 to-gray-700"
+                            />
+                            <!-- <ServiceCard -->
+                            <!--     title="Roofing" -->
+                            <!--     description="Comprehensive roofing solutions using premium materials engineered to withstand Canterbury's diverse weather conditions." -->
+                            <!--     icon="home" -->
+                            <!--     imageSrc="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop" -->
+                            <!--     accentColor="from-primary to-teal-600" -->
+                            <!-- /> -->
+                            <ServiceCard
+                                title="Flat Roofing"
+                                description="Specialized flat roof systems with advanced waterproofing membranes and proper drainage solutions for maximum durability."
+                                icon="square"
+                                imageSrc="https://images.unsplash.com/photo-1602193230480-7840a38eb0c3?q=80&w=1738&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                accentColor="from-teal-500 to-emerald-600"
+                            />
+                            <ServiceCard
+                                title="Repairs"
+                                description="Prompt, thorough repair services that address the root cause of leaks and damage to prevent future issues."
+                                icon="tool"
+                                imageSrc="https://images.unsplash.com/photo-1633759593085-1eaeb724fc88?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cm9vZiUyMHJlcGFpcnxlbnwwfHwwfHx8Mg%3D%3D"
+                                accentColor="from-amber-500 to-orange-600"
+                            />
+                            <ServiceCard
+                                title="Commercial"
+                                description="Heavy-duty commercial solutions designed for longevity, energy efficiency, and minimal maintenance requirements."
+                                icon="building"
+                                imageSrc="https://images.unsplash.com/photo-1580741753044-b3f303ad361b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8Y29tbWVyY2lhbCUyMGJ1aWxkaW5nfGVufDB8fDB8fHwy"
+                                accentColor="from-gray-700 to-slate-900"
+                            />
+                        </div>
+
+                        <div class="flex justify-center pt-8">
+                            <Button
+                                size="lg"
+                                className="bg-linear-to-r from-primary to-teal-600 transition-colors hover:from-teal-600 hover:to-primary group"
+                            >
+                                <a href="#contact" class="flex items-center gap-2">
+                                    Request a Service Quote
+                                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                                </a>
+                            </Button>
+                        </div>
+                    </div>
+                </section>
+
                 {/* Process Timeline */}
                 <section id="process" class="py-20 bg-linear-to-b from-white to-gray-50">
                     <div class="container space-y-12">
@@ -452,60 +546,7 @@ import { Image } from "astro:assets";
                     </div>
                 </section>
 
-                {/* Testimonials */}
-                <section id="testimonials" class="py-20">
-                    <div class="container space-y-12">
-                        <div class="text-center space-y-4 max-w-3xl mx-auto">
-                            <div class="flex items-center justify-center gap-2 mb-4">
-                                <div class="h-px w-8 bg-primary"></div>
-                                <span class="text-sm font-medium text-primary">Testimonials</span>
-                                <div class="h-px w-8 bg-primary"></div>
-                            </div>
-                            <h2 class="text-3xl md:text-4xl font-bold">What Our Clients Say</h2>
-                            <p class="text-muted-foreground text-lg">
-                                Don't just take our word for it - hear from satisfied clients across the region
-                            </p>
-                        </div>
-
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                            <TestimonialCard
-                                quote="After the 2011 earthquake damaged our roof, we tried several companies for repairs. Canterbury Roofing was the only one that provided a permanent solution. 10 years later and still no leaks!"
-                                author="Sarah Johnson"
-                                location="Merivale, Christchurch"
-                                rating={5}
-                                imageSrc="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=2787&auto=format&fit=crop"
-                                projectType="Roof Replacement"
-                            />
-                            <TestimonialCard
-                                quote="The team waterproofed our basement that had been leaking for years. Even through the wettest winter in recent memory, it's remained completely dry. Their attention to detail was impressive."
-                                author="David Thompson"
-                                location="Rangiora, Canterbury"
-                                rating={5}
-                                imageSrc="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=2787&auto=format&fit=crop"
-                                projectType="Basement Waterproofing"
-                            />
-                            <TestimonialCard
-                                quote="As a commercial property manager, I've worked with many roofing companies. These guys are by far the most reliable and provide the best value for money. They're now our exclusive roofing partner."
-                                author="Michael Chen"
-                                location="CBD, Christchurch"
-                                rating={5}
-                                imageSrc="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2787&auto=format&fit=crop"
-                                projectType="Commercial Roofing"
-                            />
-                        </div>
-
-                        <div class="flex justify-center pt-8">
-                            <Button
-                                variant="outline"
-                                className="border-primary text-primary hover:bg-primary hover:text-white"
-                            >
-                                <a href="#">Read More Success Stories</a>
-                            </Button>
-                        </div>
-                    </div>
-                </section>
-
-                {/* Recent Projects */}
+                {/* Past Work */}
                 <section class="py-20 bg-linear-to-b from-gray-50 to-white">
                     <div class="container space-y-12">
                         <div class="text-center space-y-4 max-w-3xl mx-auto">
@@ -656,6 +697,58 @@ import { Image } from "astro:assets";
                     </div>
                 </section>
 
+                {/* FAQS */}
+                <section class="py-16 bg-background">
+                    <div class="container mx-auto px-4">
+                        <div class="text-center mb-12">
+                            <h2 class="text-3xl font-bold text-foreground">
+                                {faqs.header}
+                            </h2>
+                            <p class="text-muted-foreground mt-2 max-w-2xl mx-auto">
+                                {faqs.description}
+                            </p>
+                        </div>
+
+                        <div class="max-w-3xl mx-auto" id="faq-container">
+                            {
+                                faqs.list.map((faq, index) => (
+                                    <div class="mb-4" data-index={index}>
+                                        <button class="faq-button flex justify-between items-center w-full p-4 text-left rounded-lg bg-background border border-muted hover:border-primary/50">
+                                            <span class="font-medium">{faq.question}</span>
+                                            <svg
+                                                class="chevron h-5 w-5 shrink-0"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                fill="none"
+                                                viewBox="0 0 24 24"
+                                                stroke="currentColor"
+                                            >
+                                                <path
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                    stroke-width="2"
+                                                    d="M19 9l-7 7-7-7"
+                                                />
+                                            </svg>
+                                        </button>
+                                        <div class="faq-answer hidden p-4 bg-background border border-muted border-t-0 rounded-b-lg">
+                                            <p class="text-muted-foreground">{faq.answer}</p>
+                                        </div>
+                                    </div>
+                                ))
+                            }
+                        </div>
+
+                        <div class="text-center mt-12">
+                            <p class="text-muted-foreground mb-4">
+                                Don't see your question here? Contact us directly and we'll be happy to help.
+                            </p>
+                            <button class="bg-primary hover:bg-primary/90 text-primary-foreground px-4 py-2 rounded"
+                                >Contact Us</button
+                            >
+                        </div>
+                    </div>
+                </section>
+
                 {/* CTA Banner */}
                 <section id="contact" class="py-20 bg-linear-to-r from-primary to-teal-600 text-white">
                     <div class="container">
@@ -729,7 +822,7 @@ import { Image } from "astro:assets";
                     </div>
                 </section>
 
-                {/* Map Section */}
+                {/* Areas */}
                 <section class="py-20">
                     <div class="container">
                         <div class="text-center space-y-4 max-w-3xl mx-auto mb-12">
@@ -781,6 +874,7 @@ import { Image } from "astro:assets";
                     </div>
                 </section>
             </main>
+
             <footer class="bg-gray-900 text-white pt-16 pb-8">
                 <div class="container">
                     <div class="grid grid-cols-1 md:grid-cols-4 gap-8 pb-8">

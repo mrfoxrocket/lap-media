@@ -2,6 +2,10 @@
 
 @custom-variant dark (&:is(.dark *));
 
+.angle-div {
+    clip-path: polygon(0 0, 70% 0, 100% 100%, 0 100%);
+}
+
 @theme {
     --color-border: hsl(var(--border));
     --color-input: hsl(var(--input));

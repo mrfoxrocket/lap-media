@@ -1,0 +1,28 @@
+---
+import AnimatedRoof from "./animated-roof";
+---
+
+<script>
+    const logoText = document.getElementById("logoText");
+    const logoImage = document.getElementById("logoImage") as HTMLImageElement;
+
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 20) {
+            logoText?.classList.replace("text-3xl", "text-2xl");
+            logoImage.width = 50;
+        } else {
+            logoText?.classList.replace("text-2xl", "text-3xl");
+            logoImage.width = 70;
+        }
+    });
+</script>
+
+<div id="logoImage" class="relative h-12 w-12 overflow-hidden">
+    <AnimatedRoof client:load />
+</div>
+<div id="logoText">
+    <span class="text-xl font-bold bg-clip-text text-transparent bg-linear-to-r from-primary to-teal-600">
+        Canterbury Roofing
+    </span>
+    <p class="text-xs text-muted-foreground">Christchurch's Premier Roofing Specialists</p>
+</div>

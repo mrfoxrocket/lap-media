@@ -1,0 +1,14 @@
+---
+import logoSrc from "@/assets/dg-homes-logo.png";
+import { Image } from "astro:assets";
+import { cn } from "@/lib/utils";
+
+const { imgSize = 70, class: customClass = "" } = Astro.props;
+---
+
+<Image id="logoImage" alt="logo" src={logoSrc} width={imgSize} class="transition-all duration-300" />
+
+<div id="logoText" class={cn("leading-tight text-3xl", customClass)}>
+    <p>Home</p>
+    <p>& Roofing</p>
+</div>
