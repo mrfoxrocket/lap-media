@@ -7,7 +7,7 @@ export const info = {
     name: "DG Home & Roofing",
     owner: "Roy Caba",
     phone: "0800 123 4567",
-    email: "info@dgventures.net",
+    email: "homes@dgventures.net",
     address: "123 Main St, Wellington",
     incorporated: 2006,
     hours: "Monday-Friday: 7am-5pm",
@@ -40,7 +40,7 @@ export const header: { cta: string; links: { label: string; href: string }[] } =
 export const hero = {
     bgImg: "bg-[url('https://images.unsplash.com/photo-1632759145351-1d592919f522?q=80&w=2070&auto=format&fit=crop')]",
     h1: "Custom Tiny Homes & Trusted Roofing Solutions",
-    h2: "From handcrafted small homes to durable, high-quality roofing—DG Home & Roofing brings your vision to life with craftsmanship you can count on.",
+    h2: "From handcrafted small homes to durable, high-quality roofing — DG Home & Roofing brings your vision to life with craftsmanship you can count on.",
     cta: "Request a Free Design Consult",
     features: [
         {
@@ -65,30 +65,31 @@ export const reviews = {
     list: [
         {
             id: 1,
-            name: "Robert Johnson",
-            location: "Lower Hutt, Wellington",
-            rating: 5,
-            text: `I cannot say enough good things about ${info.name}. From the initial consultation to the final inspection, every step was handled with professionalism and care. The crew was respectful of our property, worked efficiently, and left no mess behind. Our new roof looks fantastic and has already withstood several heavy storms without issue. I highly recommend them to anyone needing roofing services.`,
-            date: "July 10, 2023",
-            image: profile1,
-            provider: "google-icon",
-        },
-        {
-            id: 2,
-            name: "Jennifer Williams",
+            name: "Sareena K",
             location: "Karori, Wellington",
             rating: 5,
-            text: "Our tiny home build went smoother than we ever expected. Roy and the team were transparent, communicative, and clearly take pride in what they do. Highly recommend!",
+            text: "If you’re looking for a reliable, efficient, and trustworthy contractor, you’ve definitely come to the right place. DG Roofing Team is the absolute best and really knows how to deliver. You won’t be let down!",
             date: "June 22, 2023",
             image: profile2,
             provider: "google-icon",
         },
         {
+            id: 2,
+            name: "Catherine B",
+            location: "Lower Hutt, Wellington",
+            rating: 5,
+            text: `Thank you again for all your hard work and being so flexible. We didn't expect you to work so late or on the weekends like you did, but you really put 200% in to get the job done. All 'above and beyond' stuff. It's been very appreciated. :-)`,
+            date: "July 10, 2023",
+            image: profile1,
+            provider: "google-icon",
+        },
+
+        {
             id: 3,
-            name: "Thomas Brown",
+            name: "Jessie B",
             location: "Petone, Wellington",
             rating: 5,
-            text: "They replaced our roof after storm damage and handled everything—including the insurance side. Honest, efficient, and a pleasure to work with.",
+            text: "I’m so happy I chose to work with DG Team from the initial consultation all the way through the project’s conclusion, the service I received was impeccable and the end result really brought my vision to life - truly impressive final result. The team at DG Roofing is really talented, with the skills and expertise to get the job done right. Highly recommended!",
             date: "May 15, 2023",
             image: profile3,
             provider: "facebook",
@@ -211,7 +212,7 @@ export const services = {
             id: 1,
             title: "Residential Roofing",
             description:
-                "Complete roofing solutions for homes of all sizes, including installation, replacement, and repair services, with quality materials built to last.",
+                "Complete solutions including new installations, re-roofing, and repairs—using quality materials built to last for your home.",
             icon: "lucide:home",
             link: "#",
         },
@@ -219,7 +220,7 @@ export const services = {
             id: 2,
             title: "Commercial Roofing",
             description:
-                "Specialized roofing services for businesses, warehouses, and commercial properties with minimal disruption and long-lasting results.",
+                "Durable, low-disruption roofing services for commercial buildings, warehouses, and offices, backed by expert installation and support.",
             icon: "lucide:building-2",
             link: "#",
         },
@@ -227,7 +228,7 @@ export const services = {
             id: 3,
             title: "Tiny Home Design & Build",
             description:
-                "Custom tiny homes designed to suit your needs, with expert craftsmanship and attention to detail for a beautiful, functional living space.",
+                "Custom tiny homes designed and built to match your lifestyle, with functionality, comfort, and craftsmanship in mind.",
             icon: "lucide:box",
             link: "#",
         },
@@ -235,24 +236,56 @@ export const services = {
             id: 4,
             title: "Storm Damage Repair",
             description:
-                "Emergency roofing services and insurance claim assistance for roofs damaged by storms, wind, or hail, ensuring quick and reliable fixes.",
+                "Rapid response and insurance assistance for wind, hail, and storm-damaged roofs—restoring protection fast.",
             icon: "lucide:cloud-rain",
             link: "#",
         },
         {
             id: 5,
-            title: "Roof Maintenance",
+            title: "Roof Maintenance & Inspection",
             description:
-                "Preventative roof maintenance programs that extend the life of your roof, saving you from costly repairs and unexpected damages.",
-            icon: "lucide:hammer",
+                "Preventative maintenance, expert inspections, and roof consulting services to extend lifespan and ensure peace of mind.",
+            icon: "lucide:search-check",
             link: "#",
         },
         {
             id: 6,
             title: "Gutter Installation & Repair",
             description:
-                "Professional gutter installation and repair services to ensure proper water drainage and protect your property from water damage.",
+                "New gutter installs, leak repairs, and cleaning—ensuring proper drainage and preventing water damage.",
             icon: "lucide:ruler",
+            link: "#",
+        },
+        {
+            id: 7,
+            title: "Skylight & Sun Tunnel Installation",
+            description:
+                "Bring more natural light into your home with affordable skylight and sun tunnel installations or replacements.",
+            icon: "lucide:sun",
+            link: "#",
+        },
+        {
+            id: 8,
+            title: "Chimney Removal & Reflashing",
+            description:
+                "Safe removal of unused chimneys or professional reflashing to eliminate leaks and improve roof integrity.",
+            icon: "lucide:flame",
+            link: "#",
+        },
+        {
+            id: 9,
+            title: "Roof Design & Consultancy",
+            description:
+                "Discuss concerns, noise issues, or potential leaks—get expert roof design improvements and trustworthy guidance.",
+            icon: "lucide:layout-dashboard",
+            link: "#",
+        },
+        {
+            id: 10,
+            title: "Licensed Asbestos Removal",
+            description:
+                "Work with licensed Class A & B asbestos removalists to ensure safe and compliant removal of hazardous materials.",
+            icon: "lucide:biohazard",
             link: "#",
         },
     ],
